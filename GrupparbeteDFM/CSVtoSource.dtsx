@@ -1,0 +1,2847 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/15/2018 1:20:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ZARTEZEN"
+  DTS:CreatorName="ZARTEZEN\rippe"
+  DTS:DTSID="{23F4B28C-A8C3-459B-B1C5-78E416D6BC62}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LocaleID="2057"
+  DTS:MaxErrorCount="30"
+  DTS:ObjectName="CSVtoSource"
+  DTS:PackageType="5"
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{777C668E-0C01-4B2C-90F3-648553C128D1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Old]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BF7E3CD3-F092-49F9-A824-24DE63A7282D}"
+      DTS:ObjectName="Old">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\BI17\DMF\grupparbete\Basefiles\Old" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Path to new csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{57C8C3D1-2800-42C0-98FF-A0CA56AA36BD}"
+      DTS:ObjectName="Path to new csv">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::PathNew]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\BI17\DMF\grupparbete\Basefiles\New\Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Summons Number"
+              DTS:DTSID="{8263EAB0-84B8-4314-84A0-DF560D06557B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Plate ID"
+              DTS:DTSID="{75743929-3EFD-49A2-9586-85FE1E15B0C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Registration State"
+              DTS:DTSID="{56EF48EB-3FDE-45B1-BFE1-EFC0BA0271D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Plate Type"
+              DTS:DTSID="{D582386A-9DBC-4E21-B924-6D6B0209B503}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Issue Date"
+              DTS:DTSID="{1974DC59-0E79-483B-8178-9CF56F4DAAEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation Code"
+              DTS:DTSID="{683B80E2-DFDF-4BCB-B4D3-E0664FFDDC0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle Body Type"
+              DTS:DTSID="{DACFEEDA-E9A6-43DE-A408-D365488F8234}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle Make"
+              DTS:DTSID="{B0C636B3-6729-40AA-8537-3941AFFC91E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Issuing Agency"
+              DTS:DTSID="{A1945FF8-FC80-4063-8A9F-C79EE43037FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Street Code1"
+              DTS:DTSID="{14809F38-3E72-499A-B1D9-70A20438FDD8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Street Code2"
+              DTS:DTSID="{A10AFBF0-BD29-4232-BAE7-7F686FE025FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Street Code3"
+              DTS:DTSID="{9A99ADA0-422F-4201-B5F4-2C36E7A1ACAF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle Expiration Date"
+              DTS:DTSID="{A1A12C91-68DC-418D-9549-82536228A2D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation Location"
+              DTS:DTSID="{2BAD30A3-2FEB-4564-9DDD-E6FA62E3C8F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation Precinct"
+              DTS:DTSID="{7D051768-A418-4C86-B003-74954D252D7B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Issuer Precinct"
+              DTS:DTSID="{E4802F09-E49F-4846-8980-887304067BFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Issuer Code"
+              DTS:DTSID="{1FD36FA5-4AB5-4CE4-95CA-CACFA66C2C55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Issuer Command"
+              DTS:DTSID="{F5493F27-98E1-4CF8-9884-FFCD07B165E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Issuer Squad"
+              DTS:DTSID="{899DCF17-132D-4FAF-979C-F6DDA31A1A4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation Time"
+              DTS:DTSID="{302E8C4A-6F47-46E3-BC31-7E5724CEC848}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time First Observed"
+              DTS:DTSID="{94E2F37C-7674-4684-AEBC-112A810ABFD1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation County"
+              DTS:DTSID="{7F6D21A6-AF12-47F3-8C2C-E2BEFEC744DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation In Front Of Or Opposite"
+              DTS:DTSID="{22ECBE15-3D4B-41F5-BC1B-FF8D11A5DB46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="House Number"
+              DTS:DTSID="{6A392367-911E-49E6-98E4-9B6EC578CCAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Street Name"
+              DTS:DTSID="{2CE4F51F-07D1-4786-9DBF-35F801E5DE36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Intersecting Street"
+              DTS:DTSID="{F1EDED60-0153-47DA-B997-D848249CDF73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date First Observed"
+              DTS:DTSID="{0B65FFEF-6B6D-456B-BF56-BD98F0442773}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Law Section"
+              DTS:DTSID="{AB1BAC2E-C7DC-4FAB-BE5B-6A6DD478ADB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sub Division"
+              DTS:DTSID="{BE1B420D-496C-4068-A3A5-9F26D02A51A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation Legal Code"
+              DTS:DTSID="{3A50957D-8BE1-4FD6-8C91-50E9DB519910}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Days Parking In Effect    "
+              DTS:DTSID="{29BCD012-DAB2-4074-9B8A-F9382F7A4221}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="From Hours In Effect"
+              DTS:DTSID="{2D8E6C67-2023-412D-A8D0-0D274DDBB5FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="To Hours In Effect"
+              DTS:DTSID="{BE349FAA-6501-431E-A09F-07BB630DCC14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle Color"
+              DTS:DTSID="{0EBB4F6F-555E-4E43-87B7-4C5E77F09D80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unregistered Vehicle?"
+              DTS:DTSID="{2D524115-4BC5-4670-8305-22555837F3D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle Year"
+              DTS:DTSID="{23D2E019-53E0-4A4D-A474-40BE65C0E34A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Meter Number"
+              DTS:DTSID="{9601866C-7B9A-4827-A0B6-B2EC95D36BDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Feet From Curb"
+              DTS:DTSID="{68292964-6AA8-45DB-A5B5-F666A82A5AEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation Post Code"
+              DTS:DTSID="{D66A58BC-1579-42F2-8008-30EE66F00B96}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Violation Description"
+              DTS:DTSID="{7EED9197-6567-4521-9B94-7F462F3DE6D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="No Standing or Stopping Violation"
+              DTS:DTSID="{2BC1501A-E1F2-4343-8EE0-095D37DFE47E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hydrant Violation"
+              DTS:DTSID="{04E232F4-4304-4914-BC47-7F901C1A04F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Double Parking Violation"
+              DTS:DTSID="{34AC5CC5-357A-4E37-B8E0-0B6DC8A3384C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Profiler.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7AF3E466-F545-44B7-BB7B-95758BC0876D}"
+      DTS:ObjectName="Profiler.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\BI17\DMF\grupparbete\Profiler\Profiler.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[zartezen\sql2017johan.DFMLog]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{45D1A077-DFBA-4BAB-A64B-13A8A22689CB}"
+      DTS:ObjectName="zartezen\sql2017johan.DFMLog">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=DFMLog;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[zartezen\sql2017johan.DFMSource]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{564B9FFA-A2EA-4904-A665-DF667463FFC4}"
+      DTS:ObjectName="zartezen\sql2017johan.DFMSource">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[zartezen\sql2017johan.DFMSource 1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{2ED9C792-405F-43CE-A9E1-2B0458D561DD}"
+      DTS:ObjectName="zartezen\sql2017johan.DFMSource 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=DFMSource;Integrated Security=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[zartezen\sql2017johan.master]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E83E00CB-4C42-40D6-B8C2-FD75910F7769}"
+      DTS:ObjectName="zartezen\sql2017johan.master">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7CB921D0-1EBC-4D83-83F8-F708F13B839A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;BULK INSERT [dbo].[RawData] FROM &quot;+ &quot;'&quot;+ @[User::PathNew] +&quot;'&quot; + &quot; WITH (FIELDTERMINATOR = ',')&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BulkInsert">
+      <DTS:VariableValue
+        DTS:DataType="8">BULK INSERT [dbo].[RawData] FROM 'C:\BI17\DMF\grupparbete\Basefiles\New\Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_.csv' WITH (FIELDTERMINATOR = ',')</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D0090F51-7313-4D83-8A15-65E86CD3051F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="errorCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B7C9F28-DC0E-49A1-9E7A-FB9B7E1BDC9E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileCounter">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9A17492E-5056-4542-A4C9-252F8A6C3DE8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{17197AAB-5E81-4B23-B4A0-04899149D886}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;C:\\BI17\\DMF\\grupparbete\\Basefiles\\New\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PathNew">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\BI17\DMF\grupparbete\Basefiles\New\Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AD690F21-5FA0-4993-8E81-2F3A55C772E7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;C:\\BI17\\DMF\\grupparbete\\Basefiles\\Old\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PathOld">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\BI17\DMF\grupparbete\Basefiles\Old\Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BEEFE909-C11E-473B-956A-D6311887283C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{56C13E07-B101-42E7-8012-287FA8074E42}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;C:\\BI17\\DMF\\grupparbete\\Basefiles\\smallSampel.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SampelFile">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\BI17\DMF\grupparbete\Basefiles\smallSampel.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3584851C-C8EB-4BF5-AA3B-27F675525B77}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;INSERT INTO [dbo].[SSISLog] VALUES ('&quot;+ @[User::FileName] +&quot;',&quot;+  (DT_WSTR, 10) @[User::RowCount]+&quot;,&quot;+  (DT_WSTR, 10) @[User::errorCount]+&quot;)&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLWriteLog">
+      <DTS:VariableValue
+        DTS:DataType="8">INSERT INTO [dbo].[SSISLog] VALUES ('Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_',0,0)</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Profiling Task"
+      DTS:CreationName="Microsoft.DataProfilingTask"
+      DTS:Description="Data Profiling Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{F4A7DCB5-46F1-43DD-A845-B6E56A43297C}"
+      DTS:ExecutableType="Microsoft.DataProfilingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Profiling Task"
+      DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2017 RC1; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <DataProfilingTaskData
+          Destination="Profiler.txt"
+          OverwriteDestination="True">
+          <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources />
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{2ED9C792-405F-43CE-A9E1-2B0458D561DD}</DataSourceID>
+        <Table Schema="dbo" Table="RawData" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{2ED9C792-405F-43CE-A9E1-2B0458D561DD}</DataSourceID>
+        <Table Schema="dbo" Table="RawData" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{2ED9C792-405F-43CE-A9E1-2B0458D561DD}</DataSourceID>
+        <Table Schema="dbo" Table="RawData" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{2ED9C792-405F-43CE-A9E1-2B0458D561DD}</DataSourceID>
+        <Table Schema="dbo" Table="RawData" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles />
+  </DataProfileOutput>
+</DataProfile>]]></ProfileInput>
+        </DataProfilingTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\For each in new files"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{61C4B22D-A016-49BF-81F0-ACC3644DD07C}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="20"
+      DTS:ObjectName="For each in new files">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{ADAC3BFA-AC45-4C48-AA76-33D8D6CE3ABB}"
+        DTS:ObjectName="{ADAC3BFA-AC45-4C48-AA76-33D8D6CE3ABB}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\BI17\DMF\grupparbete\Basefiles\New" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="2" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\For each in new files\Bulk Insert Task"
+          DTS:CreationName="Microsoft.BulkInsertTask"
+          DTS:Description="Bulk Insert Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{79690F50-9F2C-4CE0-B277-3CEE519BE233}"
+          DTS:ExecutableType="Microsoft.BulkInsertTask"
+          DTS:LocaleID="-1"
+          DTS:MaxErrorCount="20"
+          DTS:ObjectName="Bulk Insert Task"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <BulkInsertTask:BulkInsertTaskData
+              BulkInsertTask:CheckConstraints="False"
+              BulkInsertTask:SourceConnectionName="{80366B6B-D793-44A6-85A9-9AC38EDCE536}"
+              BulkInsertTask:DestinationConnectionName="{564B9FFA-A2EA-4904-A665-DF667463FFC4}"
+              BulkInsertTask:DestinationTableName="[dbo].[RawData]"
+              BulkInsertTask:FieldTerminator="Comma {,}"
+              BulkInsertTask:RowTerminator="{LF}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\For each in new files\Get one file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{01855194-427E-4638-9F48-AF1F5A4B5307}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get one file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\For each in new files\Get one file\Broken Row records"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Broken Row records">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::errorCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\For each in new files\Get one file\Broken Row records.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For each in new files\Get one file\Broken Row records.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\For each in new files\Get one file\Broken Row records.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For each in new files\Get one file\Count Successfullrows"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Count Successfullrows">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::RowCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\For each in new files\Get one file\Count Successfullrows.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For each in new files\Get one file\Count Successfullrows.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\For each in new files\Get one file\Count Successfullrows.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For each in new files\Get one file\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2057"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For each in new files\Get one file\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Path to new csv]"
+                      connectionManagerRefId="Package.ConnectionManagers[Path to new csv]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Summons Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Summons Number]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Summons Number]"
+                          name="Summons Number"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Plate ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Plate ID]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Plate ID]"
+                          name="Plate ID"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Registration State]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Registration State]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Registration State]"
+                          name="Registration State"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Plate Type]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Plate Type]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Plate Type]"
+                          name="Plate Type"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issue Date]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issue Date]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issue Date]"
+                          name="Issue Date"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Code]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Code]"
+                          name="Violation Code"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Body Type]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Body Type]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Body Type]"
+                          name="Vehicle Body Type"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Make]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Make]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Make]"
+                          name="Vehicle Make"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuing Agency]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuing Agency]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuing Agency]"
+                          name="Issuing Agency"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Code1]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code1]"
+                          name="Street Code1"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Code2]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code2]"
+                          name="Street Code2"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code3]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Code3]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code3]"
+                          name="Street Code3"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Expiration Date]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Expiration Date]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Expiration Date]"
+                          name="Vehicle Expiration Date"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Location]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Location]"
+                          name="Violation Location"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Precinct]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Precinct]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Precinct]"
+                          name="Violation Precinct"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Precinct]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Precinct]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Precinct]"
+                          name="Issuer Precinct"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Code]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Code]"
+                          name="Issuer Code"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Command]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Command]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Command]"
+                          name="Issuer Command"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Squad]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Squad]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Squad]"
+                          name="Issuer Squad"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Time]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Time]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Time]"
+                          name="Violation Time"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Time First Observed]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time First Observed]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Time First Observed]"
+                          name="Time First Observed"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation County]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation County]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation County]"
+                          name="Violation County"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation In Front Of Or Opposite]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation In Front Of Or Opposite]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation In Front Of Or Opposite]"
+                          name="Violation In Front Of Or Opposite"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[House Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[House Number]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[House Number]"
+                          name="House Number"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Name]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Name]"
+                          name="Street Name"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Intersecting Street]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Intersecting Street]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Intersecting Street]"
+                          name="Intersecting Street"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Date First Observed]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date First Observed]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Date First Observed]"
+                          name="Date First Observed"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Law Section]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Law Section]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Law Section]"
+                          name="Law Section"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Sub Division]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sub Division]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Sub Division]"
+                          name="Sub Division"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Legal Code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Legal Code]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Legal Code]"
+                          name="Violation Legal Code"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Days Parking In Effect    ]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Days Parking In Effect    ]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Days Parking In Effect    ]"
+                          name="Days Parking In Effect    "
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[From Hours In Effect]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[From Hours In Effect]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[From Hours In Effect]"
+                          name="From Hours In Effect"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[To Hours In Effect]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[To Hours In Effect]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[To Hours In Effect]"
+                          name="To Hours In Effect"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Color]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Color]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Color]"
+                          name="Vehicle Color"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Unregistered Vehicle?]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unregistered Vehicle?]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Unregistered Vehicle?]"
+                          name="Unregistered Vehicle?"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Year]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Year]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Year]"
+                          name="Vehicle Year"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Meter Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Meter Number]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Meter Number]"
+                          name="Meter Number"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Feet From Curb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Feet From Curb]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Feet From Curb]"
+                          name="Feet From Curb"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Post Code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Post Code]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Post Code]"
+                          name="Violation Post Code"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Description]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Description]"
+                          name="Violation Description"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[No Standing or Stopping Violation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[No Standing or Stopping Violation]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[No Standing or Stopping Violation]"
+                          name="No Standing or Stopping Violation"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Hydrant Violation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hydrant Violation]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Hydrant Violation]"
+                          name="Hydrant Violation"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Double Parking Violation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Double Parking Violation]"
+                          length="50"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Double Parking Violation]"
+                          name="Double Parking Violation"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Summons Number]"
+                          dataType="wstr"
+                          length="50"
+                          name="Summons Number" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Plate ID]"
+                          dataType="wstr"
+                          length="50"
+                          name="Plate ID" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Registration State]"
+                          dataType="wstr"
+                          length="50"
+                          name="Registration State" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Plate Type]"
+                          dataType="wstr"
+                          length="50"
+                          name="Plate Type" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issue Date]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issue Date" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Body Type]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle Body Type" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Make]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle Make" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuing Agency]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuing Agency" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Code1]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street Code1" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Code2]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street Code2" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Code3]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street Code3" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Expiration Date]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle Expiration Date" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Location]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation Location" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Precinct]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation Precinct" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Precinct]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer Precinct" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Command]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer Command" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Issuer Squad]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer Squad" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Time]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation Time" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time First Observed]"
+                          dataType="wstr"
+                          length="50"
+                          name="Time First Observed" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation County]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation County" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation In Front Of Or Opposite]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation In Front Of Or Opposite" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[House Number]"
+                          dataType="wstr"
+                          length="50"
+                          name="House Number" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Name]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street Name" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Intersecting Street]"
+                          dataType="wstr"
+                          length="50"
+                          name="Intersecting Street" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date First Observed]"
+                          dataType="wstr"
+                          length="50"
+                          name="Date First Observed" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Law Section]"
+                          dataType="wstr"
+                          length="50"
+                          name="Law Section" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sub Division]"
+                          dataType="wstr"
+                          length="50"
+                          name="Sub Division" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Legal Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation Legal Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Days Parking In Effect    ]"
+                          dataType="wstr"
+                          length="50"
+                          name="Days Parking In Effect    " />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[From Hours In Effect]"
+                          dataType="wstr"
+                          length="50"
+                          name="From Hours In Effect" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[To Hours In Effect]"
+                          dataType="wstr"
+                          length="50"
+                          name="To Hours In Effect" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Color]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle Color" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unregistered Vehicle?]"
+                          dataType="wstr"
+                          length="50"
+                          name="Unregistered Vehicle?" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Year]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle Year" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Meter Number]"
+                          dataType="wstr"
+                          length="50"
+                          name="Meter Number" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Feet From Curb]"
+                          dataType="wstr"
+                          length="50"
+                          name="Feet From Curb" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Post Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation Post Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Violation Description]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation Description" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[No Standing or Stopping Violation]"
+                          dataType="wstr"
+                          length="50"
+                          name="No Standing or Stopping Violation" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hydrant Violation]"
+                          dataType="wstr"
+                          length="50"
+                          name="Hydrant Violation" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Double Parking Violation]"
+                          dataType="wstr"
+                          length="50"
+                          name="Double Parking Violation" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For each in new files\Get one file\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[RawData]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For each in new files\Get one file\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[zartezen\sql2017johan.DFMSource]"
+                      connectionManagerRefId="Package.ConnectionManagers[zartezen\sql2017johan.DFMSource]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Summons Number]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Summons Number"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Summons_Number]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Summons Number]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Plate ID]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Plate ID"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plate_ID]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Plate ID]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Registration State]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Registration State"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Registration_State]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Registration State]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Plate Type]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Plate Type"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plate_Type]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Plate Type]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Issue Date]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Issue Date"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issue_Date]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issue Date]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation Code]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation Code"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Code]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Code]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vehicle Body Type]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Vehicle Body Type"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Body_Type]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Body Type]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vehicle Make]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Vehicle Make"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Make]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Make]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Issuing Agency]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Issuing Agency"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuing_Agency]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuing Agency]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Street Code1]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Street Code1"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Code1]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code1]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Street Code2]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Street Code2"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Code2]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code2]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Street Code3]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Street Code3"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Code3]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Code3]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vehicle Expiration Date]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Vehicle Expiration Date"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Expiration_Date]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Expiration Date]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation Location]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation Location"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Location]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Location]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation Precinct]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation Precinct"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Precinct]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Precinct]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Issuer Precinct]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Issuer Precinct"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Precinct]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Precinct]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Issuer Code]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Issuer Code"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Code]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Code]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Issuer Command]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Issuer Command"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Command]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Command]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Issuer Squad]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Issuer Squad"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Squad]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Issuer Squad]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation Time]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation Time"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Time]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Time]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Time First Observed]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Time First Observed"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time_First_Observed]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Time First Observed]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation County]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation County"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_County]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation County]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation In Front Of Or Opposite]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation In Front Of Or Opposite"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_In_Front_Of_Or_Opposite]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation In Front Of Or Opposite]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[House Number]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="House Number"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[House_Number]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[House Number]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Street Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Street Name"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Name]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Street Name]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Intersecting Street]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Intersecting Street"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Intersecting_Street]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Intersecting Street]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date First Observed]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Date First Observed"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_First_Observed]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Date First Observed]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Law Section]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Law Section"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Law_Section]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Law Section]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sub Division]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Sub Division"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sub_Division]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Sub Division]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation Legal Code]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation Legal Code"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Legal_Code]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Legal Code]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Days Parking In Effect    ]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Days Parking In Effect    "
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Days_Parking_In_Effect]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Days Parking In Effect    ]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[From Hours In Effect]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="From Hours In Effect"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[From_Hours_In_Effect]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[From Hours In Effect]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[To Hours In Effect]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="To Hours In Effect"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[To_Hours_In_Effect]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[To Hours In Effect]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vehicle Color]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Vehicle Color"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Color]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Color]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Unregistered Vehicle?]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Unregistered Vehicle?"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unregistered_Vehicle_]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Unregistered Vehicle?]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vehicle Year]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Vehicle Year"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Year]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Year]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Meter Number]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Meter Number"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Meter_Number]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Meter Number]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Feet From Curb]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Feet From Curb"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Feet_From_Curb]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Feet From Curb]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation Post Code]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation Post Code"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Post_Code]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Post Code]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Violation Description]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Violation Description"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Description]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Violation Description]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[No Standing or Stopping Violation]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="No Standing or Stopping Violation"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[No_Standing_or_Stopping_Violation]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[No Standing or Stopping Violation]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Hydrant Violation]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Hydrant Violation"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hydrant_Violation]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Hydrant Violation]" />
+                        <inputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Double Parking Violation]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Double Parking Violation"
+                          externalMetadataColumnId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Double_Parking_Violation]"
+                          lineageId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output].Columns[Double Parking Violation]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Summons_Number]"
+                          dataType="wstr"
+                          length="50"
+                          name="Summons_Number" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plate_ID]"
+                          dataType="wstr"
+                          length="50"
+                          name="Plate_ID" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Registration_State]"
+                          dataType="wstr"
+                          length="50"
+                          name="Registration_State" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plate_Type]"
+                          dataType="wstr"
+                          length="50"
+                          name="Plate_Type" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issue_Date]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issue_Date" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Body_Type]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle_Body_Type" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Make]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle_Make" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuing_Agency]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuing_Agency" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Code1]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street_Code1" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Code2]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street_Code2" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Code3]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street_Code3" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Expiration_Date]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle_Expiration_Date" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Location]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_Location" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Precinct]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_Precinct" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Precinct]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer_Precinct" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer_Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Command]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer_Command" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Issuer_Squad]"
+                          dataType="wstr"
+                          length="50"
+                          name="Issuer_Squad" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Time]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_Time" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time_First_Observed]"
+                          dataType="wstr"
+                          length="50"
+                          name="Time_First_Observed" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_County]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_County" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_In_Front_Of_Or_Opposite]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_In_Front_Of_Or_Opposite" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[House_Number]"
+                          dataType="wstr"
+                          length="50"
+                          name="House_Number" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Name]"
+                          dataType="wstr"
+                          length="50"
+                          name="Street_Name" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Intersecting_Street]"
+                          dataType="wstr"
+                          length="50"
+                          name="Intersecting_Street" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_First_Observed]"
+                          dataType="wstr"
+                          length="50"
+                          name="Date_First_Observed" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Law_Section]"
+                          dataType="wstr"
+                          length="50"
+                          name="Law_Section" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sub_Division]"
+                          dataType="wstr"
+                          length="50"
+                          name="Sub_Division" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Legal_Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_Legal_Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Days_Parking_In_Effect]"
+                          dataType="wstr"
+                          length="50"
+                          name="Days_Parking_In_Effect" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[From_Hours_In_Effect]"
+                          dataType="wstr"
+                          length="50"
+                          name="From_Hours_In_Effect" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[To_Hours_In_Effect]"
+                          dataType="wstr"
+                          length="50"
+                          name="To_Hours_In_Effect" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Color]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle_Color" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unregistered_Vehicle_]"
+                          dataType="wstr"
+                          length="50"
+                          name="Unregistered_Vehicle_" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Year]"
+                          dataType="wstr"
+                          length="50"
+                          name="Vehicle_Year" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Meter_Number]"
+                          dataType="wstr"
+                          length="50"
+                          name="Meter_Number" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Feet_From_Curb]"
+                          dataType="wstr"
+                          length="50"
+                          name="Feet_From_Curb" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Post_Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_Post_Code" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Violation_Description]"
+                          dataType="wstr"
+                          length="50"
+                          name="Violation_Description" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[No_Standing_or_Stopping_Violation]"
+                          dataType="wstr"
+                          length="50"
+                          name="No_Standing_or_Stopping_Violation" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hydrant_Violation]"
+                          dataType="wstr"
+                          length="50"
+                          name="Hydrant_Violation" />
+                        <externalMetadataColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Double_Parking_Violation]"
+                          dataType="wstr"
+                          length="50"
+                          name="Double_Parking_Violation" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For each in new files\Get one file\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For each in new files\Get one file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For each in new files\Get one file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For each in new files\Get one file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\For each in new files\Get one file.Paths[Flat File Source Error Output]"
+                  endId="Package\For each in new files\Get one file\Broken Row records.Inputs[Row Count Input 1]"
+                  name="Flat File Source Error Output"
+                  startId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Error Output]" />
+                <path
+                  refId="Package\For each in new files\Get one file.Paths[Flat File Source Output]"
+                  endId="Package\For each in new files\Get one file\Count Successfullrows.Inputs[Row Count Input 1]"
+                  name="Flat File Source Output"
+                  startId="Package\For each in new files\Get one file\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\For each in new files\Get one file.Paths[Row Count Output 1]"
+                  endId="Package\For each in new files\Get one file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\For each in new files\Get one file\Count Successfullrows.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\For each in new files\Move File to old"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{B6B61A58-C7C5-4B0D-8882-D6557591D6AC}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move File to old"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::PathNew"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::PathOld"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\For each in new files\WriteLog"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3D158206-CCCF-4F5D-849D-32EB5FAA0547}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="WriteLog"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{45D1A077-DFBA-4BAB-A64B-13A8A22689CB}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::SQLWriteLog" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5DA80A2E-4C2E-4077-A991-E8406CCB628B}"
+          DTS:From="Package\For each in new files\Get one file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\For each in new files\Move File to old" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{4142A4D3-72E9-4467-9547-88D2222CD83B}"
+          DTS:From="Package\For each in new files\Move File to old"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\For each in new files\WriteLog" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{ED8F0631-E190-499A-BE83-201763C18EAB}"
+          DTS:ObjectName="{ED8F0631-E190-499A-BE83-201763C18EAB}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Data Profiling Task"
+          TopLeft="119.365081397854,31.6758174377053" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\For each in new files\Bulk Insert Task"
+          TopLeft="20.8000004087175,9.41176661059137" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\For each in new files\Get one file"
+          TopLeft="70.4507952456571,62.5934673535921" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\For each in new files\Move File to old"
+          TopLeft="57.1428589334294,144.115036507269" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\For each in new files\WriteLog"
+          TopLeft="78.6666684831893,218.86013581915" />
+        <EdgeLayout
+          Id="Package\For each in new files.PrecedenceConstraints[Constraint]"
+          TopLeft="135.196827089543,104.193467353592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.9215691536769"
+              Start="0,0"
+              End="0,32.4215691536769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4215691536769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
+          TopLeft="136.304763708309,185.715036507269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.1450993118813"
+              Start="0,0"
+              End="0,25.6450993118813">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6450993118813" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="384.8,330.4"
+          Size="384.8,373.6"
+          Id="Package\For each in new files"
+          TopLeft="52.6984103791027,151.513727615119" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\For each in new files\Get one file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\For each in new files\Get one file\Count Successfullrows"
+          TopLeft="111.2,160" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\For each in new files\Get one file\OLE DB Destination"
+          TopLeft="120,282.4" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\For each in new files\Get one file\Flat File Source"
+          TopLeft="123.2,40" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\For each in new files\Get one file\Broken Row records"
+          TopLeft="450.4,45.6" />
+        <EdgeLayout
+          Id="Package\For each in new files\Get one file.Paths[Row Count Output 1]"
+          TopLeft="203.8,201.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.8"
+              Start="0,0"
+              End="0,73.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For each in new files\Get one file.Paths[Flat File Source Output]"
+          TopLeft="200.4,81.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78.4"
+              Start="0,0"
+              End="0,70.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For each in new files\Get one file.Paths[Flat File Source Error Output]"
+          TopLeft="273.6,63.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.8,0"
+              Start="0,0"
+              End="169.3,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="169.3,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="21.02361328125,5,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For each in new files\Get one file\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

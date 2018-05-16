@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FixLookupTabels"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{83028ABF-FE1A-4A32-8BA9-55C1831CB46A}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{F3563429-9A97-4054-9A4A-1D96AEAE3CD5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -72,9 +72,11 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{FA1DBE3E-E757-4481-96B7-6A6DC5A548DB}"
       DTS:ObjectName="zartezen\sql2017johan.master">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\SQL2017JOHAN;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -211,6 +213,7 @@ CREATE TABLE [dbo].[LookUpColor](
           DTS:refId="Package\Foreach Loop Container\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{E169E6CE-5999-49FC-AF8E-D56CCFF6C0FA}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"

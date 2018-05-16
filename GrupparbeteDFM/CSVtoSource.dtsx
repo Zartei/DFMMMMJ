@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{777C668E-0C01-4B2C-90F3-648553C128D1}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{7A4DD626-8BB0-497F-AAC0-3CBB9CBEAA33}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2667,7 +2667,7 @@
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Data Profiling Task"
-          TopLeft="119.365081397854,31.6758174377053" />
+          TopLeft="186.793653974727,31.6758174377053" />
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\For each in new files\Bulk Insert Task"
@@ -2675,7 +2675,7 @@
         <NodeLayout
           Size="132.8,41.6"
           Id="Package\For each in new files\Get one file"
-          TopLeft="70.4507952456571,62.5934673535921" />
+          TopLeft="73.8793667326168,66.2640556403649" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\For each in new files\Move File to old"
@@ -2686,18 +2686,18 @@
           TopLeft="78.6666684831893,218.86013581915" />
         <EdgeLayout
           Id="Package\For each in new files.PrecedenceConstraints[Constraint]"
-          TopLeft="135.196827089543,104.193467353592">
+          TopLeft="136.911112833023,107.864055640365">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.9215691536769"
+              EndConnector="0,36.2509808669041"
               Start="0,0"
-              End="0,32.4215691536769">
+              End="0,28.7509808669041">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.4215691536769" />
+                    End="0,28.7509808669041" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2731,8 +2731,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="384.8,330.4"
-          Size="384.8,373.6"
+          PanelSize="404.8,310.4"
+          Size="404.8,353.6"
           Id="Package\For each in new files"
           TopLeft="52.6984103791027,151.513727615119" />
       </GraphLayout>

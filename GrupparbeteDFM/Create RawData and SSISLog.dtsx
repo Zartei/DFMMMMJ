@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Create RawData and SSISLog"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{F96D114F-550B-4B98-B5D9-A9698F16A861}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{56E3E0CC-8E6B-4DBE-8CF7-E626E1AA3ADB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -62,7 +62,7 @@
         <NodeLayout
           Size="217.6,41.6"
           Id="Package\Create RawData and SSISLog"
-          TopLeft="180.000003065382,103.388236744099" />
+          TopLeft="30.8571433826368,35.4823534388031" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

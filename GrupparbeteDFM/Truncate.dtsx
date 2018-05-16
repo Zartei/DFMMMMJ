@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Truncate"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{DBC1D7C9-21AF-48AC-9FF3-07EE333F881F}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{99C20467-AA4C-4B11-B944-7D1AF1C01384}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,6 +33,7 @@
       DTS:refId="Package\Truncate RawData and Log"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{7662f9d9-b6ba-4eea-a3f2-76e150ef1e8f}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"

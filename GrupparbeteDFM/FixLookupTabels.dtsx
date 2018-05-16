@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FixLookupTabels"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{017C0989-982C-4392-A4F0-28B7B20913A3}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{5B9A5266-2480-4F67-A8B9-156237256E1C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         DTS:Name="ConnectionString">@[User::ConString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -90,7 +90,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConString">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -101,7 +101,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConStringMaster">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -127,12 +127,12 @@
       DTS:CreationName=""
       DTS:DTSID="{70B3016A-848F-4600-B5AD-AD51EA4607F3}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[System::MachineName]+&quot;\\sql2017johan&quot;"
+      DTS:Expression="@[System::MachineName]+&quot;\\&quot;+ @[$Project::Servername]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ServerName">
       <DTS:VariableValue
-        DTS:DataType="8">ZARTEZEN\sql2017johan</DTS:VariableValue>
+        DTS:DataType="8">ZARTEZEN\sql2017</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -157,14 +157,14 @@ CREATE TABLE [dbo].[LookupStaging](
       DTS:CreationName=""
       DTS:DTSID="{876B386D-DFE7-4203-9C61-70DD6738D690}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;USE [DFMSource]&#xA;GO&#xA;Drop TABLE LoopupStaging&quot;"
+      DTS:Expression="&quot;USE [DFMSource]&#xA;GO&#xA;Drop TABLE LookupStaging&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLDropStaging">
       <DTS:VariableValue
         DTS:DataType="8">USE [DFMSource]
 GO
-Drop TABLE LoopupStaging</DTS:VariableValue>
+Drop TABLE LookupStaging</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -739,15 +739,15 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
     design-time-name="Package\Foreach Loop Container\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
-          TopLeft="196.8,84.8" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
           TopLeft="191.2,244.8" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
+          TopLeft="196.8,84.8" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="274.2,126.4">
@@ -767,7 +767,9 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

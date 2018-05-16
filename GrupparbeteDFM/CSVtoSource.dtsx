@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{F80F36DE-0E43-4F07-90D5-E2F392CFE78B}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{06BB4EDA-C3A5-49B4-A385-CDDA60AE2096}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -541,7 +541,7 @@
       DTS:CreationName=""
       DTS:DTSID="{17197AAB-5E81-4B23-B4A0-04899149D886}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::Path] +&quot;Basefiles\\New\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
+      DTS:Expression="@[$Project::PathToFiles]  +&quot;Basefiles\\New\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PathNew">
@@ -2658,18 +2658,18 @@
         <NodeLayout
           Size="132.8,41.6"
           Id="Package\For each in new files\Get one file"
-          TopLeft="73.8793667326168,66.2640556403649" />
+          TopLeft="47.5936519992595,29.5581727726376" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\For each in new files\Move File to old"
-          TopLeft="57.1428589334294,144.115036507269" />
+          TopLeft="30.8571442000721,107.409153639542" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\For each in new files\WriteLog"
-          TopLeft="78.6666684831893,218.86013581915" />
+          TopLeft="52.380953749832,182.154252951423" />
         <EdgeLayout
           Id="Package\For each in new files.PrecedenceConstraints[Constraint]"
-          TopLeft="136.911112833023,107.864055640365">
+          TopLeft="110.625398099666,71.1581727726377">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2691,7 +2691,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
-          TopLeft="136.304763708309,185.715036507269">
+          TopLeft="110.019048974952,149.009153639542">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2717,7 +2717,7 @@
           PanelSize="404.8,310.4"
           Size="404.8,353.6"
           Id="Package\For each in new files"
-          TopLeft="52.6984103791027,151.513727615119" />
+          TopLeft="28.1269813892252,109.301962317233" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

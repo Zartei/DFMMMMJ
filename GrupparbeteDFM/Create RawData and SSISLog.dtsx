@@ -1,0 +1,70 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2018 9:31:34 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ZARTEZEN"
+  DTS:CreatorName="ZARTEZEN\rippe"
+  DTS:DTSID="{A82738D2-2847-4A22-A495-317CD30451E9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Create RawData and SSISLog"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{F96D114F-550B-4B98-B5D9-A9698F16A861}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[zartezen\sql2017johan.master]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5B9AB146-4660-475A-85FB-63AF8A14B168}"
+      DTS:ObjectName="zartezen\sql2017johan.master">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create RawData and SSISLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0D7A4A83-E87F-46A4-82C3-A1D79E0D5641}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create RawData and SSISLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5B9AB146-4660-475A-85FB-63AF8A14B168}"
+          SQLTask:SqlStatementSource="USE [DFMSource]&#xA;GO&#xA;IF OBJECT_ID (N'dbo.RawData', N'U') IS NOT NULL &#xA;&#x9;DROP TABLE [dbo].[RawData];&#xA;GO&#xA;CREATE TABLE [dbo].[RawData](&#xA;&#x9;[Summons_Number] [nvarchar](50) ,&#xA;&#x9;[Plate_ID] [nvarchar](50) ,&#xA;&#x9;[Registration_State] [nvarchar](50) ,&#xA;&#x9;[Plate_Type] [nvarchar](50) ,&#xA;&#x9;[Issue_Date] [nvarchar](50) ,&#xA;&#x9;[Violation_Code] [nvarchar](50) ,&#xA;&#x9;[Vehicle_Body_Type] [nvarchar](50) ,&#xA;&#x9;[Vehicle_Make] [nvarchar](50) ,&#xA;&#x9;[Issuing_Agency] [nvarchar](50) ,&#xA;&#x9;[Street_Code1] [nvarchar](50) ,&#xA;&#x9;[Street_Code2] [nvarchar](50) ,&#xA;&#x9;[Street_Code3] [nvarchar](50) ,&#xA;&#x9;[Vehicle_Expiration_Date] [nvarchar](50) ,&#xA;&#x9;[Violation_Location] [nvarchar](50) ,&#xA;&#x9;[Violation_Precinct] [nvarchar](50) ,&#xA;&#x9;[Issuer_Precinct] [nvarchar](50) ,&#xA;&#x9;[Issuer_Code] [nvarchar](50) ,&#xA;&#x9;[Issuer_Command] [nvarchar](50) ,&#xA;&#x9;[Issuer_Squad] [nvarchar](50) ,&#xA;&#x9;[Violation_Time] [nvarchar](50) ,&#xA;&#x9;[Time_First_Observed] [nvarchar](50) ,&#xA;&#x9;[Violation_County] [nvarchar](50) ,&#xA;&#x9;[Violation_In_Front_Of_Or_Opposite] [nvarchar](50) ,&#xA;&#x9;[House_Number] [nvarchar](50) ,&#xA;&#x9;[Street_Name] [nvarchar](50) ,&#xA;&#x9;[Intersecting_Street] [nvarchar](50) ,&#xA;&#x9;[Date_First_Observed] [nvarchar](50) ,&#xA;&#x9;[Law_Section] [nvarchar](50) ,&#xA;&#x9;[Sub_Division] [nvarchar](50) ,&#xA;&#x9;[Violation_Legal_Code] [nvarchar](50) ,&#xA;&#x9;[Days_Parking_In_Effect] [nvarchar](50) ,&#xA;&#x9;[From_Hours_In_Effect] [nvarchar](50) ,&#xA;&#x9;[To_Hours_In_Effect] [nvarchar](50) ,&#xA;&#x9;[Vehicle_Color] [nvarchar](50) ,&#xA;&#x9;[Unregistered_Vehicle_] [nvarchar](50) ,&#xA;&#x9;[Vehicle_Year] [nvarchar](50) ,&#xA;&#x9;[Meter_Number] [nvarchar](50) ,&#xA;&#x9;[Feet_From_Curb] [nvarchar](50) ,&#xA;&#x9;[Violation_Post_Code] [nvarchar](50) ,&#xA;&#x9;[Violation_Description] [nvarchar](50) ,&#xA;&#x9;[No_Standing_or_Stopping_Violation] [nvarchar](50) ,&#xA;&#x9;[Hydrant_Violation] [nvarchar](50) ,&#xA;&#x9;[Double_Parking_Violation] [nvarchar](50) &#xA;) &#xA;GO&#xA;&#xA;USE DFMLog&#xA;GO&#xA;IF OBJECT_ID (N'dbo.SSISLog', N'U') IS NOT NULL &#xA;&#x9;DROP TABLE [dbo].[SSISLog];&#xA;CREATE TABLE [dbo].[SSISLog](&#xA;&#x9;[FileName] [nvarchar](100),&#xA;&#x9;OkeyRows INT,&#xA;&#x9;DiscaredRows INT&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Create RawData and SSISLog"
+          TopLeft="180.000003065382,103.388236744099" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

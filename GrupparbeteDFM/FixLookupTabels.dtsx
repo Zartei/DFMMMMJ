@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FixLookupTabels"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{F3563429-9A97-4054-9A4A-1D96AEAE3CD5}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{2C0D8152-5ECC-4987-8BEC-75E6CEEAB1BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -64,7 +64,7 @@
         DTS:Name="ConnectionString">@[User::ConString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\SQL2017JOHAN;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -76,7 +76,7 @@
         DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\SQL2017JOHAN;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -90,7 +90,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConString">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\SQL2017JOHAN;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -101,7 +101,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConStringMaster">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\SQL2017JOHAN;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -126,11 +126,13 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{70B3016A-848F-4600-B5AD-AD51EA4607F3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName]+&quot;\\sql2017&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ServerName">
       <DTS:VariableValue
-        DTS:DataType="8">ZARTEZEN\SQL2017JOHAN</DTS:VariableValue>
+        DTS:DataType="8">ZARTEZEN\sql2017</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

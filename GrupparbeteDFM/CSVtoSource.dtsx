@@ -12,27 +12,16 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{7A4DD626-8BB0-497F-AAC0-3CBB9CBEAA33}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{F80F36DE-0E43-4F07-90D5-E2F392CFE78B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Old]"
-      DTS:CreationName="FILE"
-      DTS:DTSID="{BF7E3CD3-F092-49F9-A824-24DE63A7282D}"
-      DTS:ObjectName="Old">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:FileUsageType="2"
-          DTS:ConnectionString="C:\BI17\DMF\grupparbete\Basefiles\Old" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Path to new csv]"
+      DTS:refId="Package.ConnectionManagers[DynamicPath to new csv]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{57C8C3D1-2800-42C0-98FF-A0CA56AA36BD}"
-      DTS:ObjectName="Path to new csv">
+      DTS:ObjectName="DynamicPath to new csv">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::PathNew]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -489,6 +478,26 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{BEE66096-0D8D-4D77-B926-5324AB348229}"
+      DTS:ObjectName="Path2">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\BI17\DMF\grupparbete\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E5D3EC9A-930A-4062-9481-F50EB9B071D5}"
+      DTS:ObjectName="ServerName2">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">sql2017</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -532,7 +541,7 @@
       DTS:CreationName=""
       DTS:DTSID="{17197AAB-5E81-4B23-B4A0-04899149D886}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;C:\\BI17\\DMF\\grupparbete\\Basefiles\\New\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
+      DTS:Expression="@[$Package::Path] +&quot;Basefiles\\New\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PathNew">
@@ -563,7 +572,7 @@
       DTS:CreationName=""
       DTS:DTSID="{56C13E07-B101-42E7-8012-287FA8074E42}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;C:\\BI17\\DMF\\grupparbete\\Basefiles\\smallSampel.txt&quot;"
+      DTS:Expression="@[$Project::PathToFiles] +&quot;Basefiles\\smallSampel.txt&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SampelFile">
@@ -669,28 +678,6 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\For each in new files\Bulk Insert Task"
-          DTS:CreationName="Microsoft.BulkInsertTask"
-          DTS:Description="Bulk Insert Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{79690F50-9F2C-4CE0-B277-3CEE519BE233}"
-          DTS:ExecutableType="Microsoft.BulkInsertTask"
-          DTS:LocaleID="-1"
-          DTS:MaxErrorCount="20"
-          DTS:ObjectName="Bulk Insert Task"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <BulkInsertTask:BulkInsertTaskData
-              BulkInsertTask:CheckConstraints="False"
-              BulkInsertTask:SourceConnectionName="{80366B6B-D793-44A6-85A9-9AC38EDCE536}"
-              BulkInsertTask:DestinationConnectionName="{564B9FFA-A2EA-4904-A665-DF667463FFC4}"
-              BulkInsertTask:DestinationTableName="[dbo].[RawData]"
-              BulkInsertTask:FieldTerminator="Comma {,}"
-              BulkInsertTask:RowTerminator="{LF}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\For each in new files\Get one file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
@@ -784,8 +771,8 @@
                   <connections>
                     <connection
                       refId="Package\For each in new files\Get one file\Flat File Source.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Path to new csv]"
-                      connectionManagerRefId="Package.ConnectionManagers[Path to new csv]"
+                      connectionManagerID="Package.ConnectionManagers[DynamicPath to new csv]"
+                      connectionManagerRefId="Package.ConnectionManagers[DynamicPath to new csv]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -2594,7 +2581,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Move File to old"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -2614,7 +2601,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="WriteLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2668,10 +2655,6 @@
           Size="167.2,41.6"
           Id="Package\Data Profiling Task"
           TopLeft="186.793653974727,31.6758174377053" />
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\For each in new files\Bulk Insert Task"
-          TopLeft="20.8000004087175,9.41176661059137" />
         <NodeLayout
           Size="132.8,41.6"
           Id="Package\For each in new files\Get one file"

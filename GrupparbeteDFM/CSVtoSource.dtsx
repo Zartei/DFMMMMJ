@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{06BB4EDA-C3A5-49B4-A385-CDDA60AE2096}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{A22678D6-B2BC-40B7-BD96-0B8CF7B6CA17}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -442,9 +442,11 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{45D1A077-DFBA-4BAB-A64B-13A8A22689CB}"
       DTS:ObjectName="zartezen\sql2017johan.DFMLog">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConStringDFMLog]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=DFMLog;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMLog;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -452,19 +454,11 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{564B9FFA-A2EA-4904-A665-DF667463FFC4}"
       DTS:ObjectName="zartezen\sql2017johan.DFMSource">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConStringDFMSource]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[zartezen\sql2017johan.DFMSource 1]"
-      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{2ED9C792-405F-43CE-A9E1-2B0458D561DD}"
-      DTS:ObjectName="zartezen\sql2017johan.DFMSource 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=DFMSource;Integrated Security=True;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -472,9 +466,11 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{E83E00CB-4C42-40D6-B8C2-FD75910F7769}"
       DTS:ObjectName="zartezen\sql2017johan.master">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -509,6 +505,39 @@
       DTS:ObjectName="BulkInsert">
       <DTS:VariableValue
         DTS:DataType="8">BULK INSERT [dbo].[RawData] FROM 'C:\BI17\DMF\grupparbete\Basefiles\New\Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_.csv' WITH (FIELDTERMINATOR = ',')</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{71731CE7-7428-4788-94DB-ABC4C5B8BF13}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Data Source=&quot;+ @[User::ServerName] +&quot;;Initial Catalog=DFMLog;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConStringDFMLog">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMLog;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4BE81409-61C4-4D6A-AF34-4B985D28C076}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Data Source=&quot;+ @[User::ServerName] +&quot;;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConStringDFMSource">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6B7BA5BC-151F-4C37-86F3-0C4E31366A27}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Data Source=&quot;+ @[User::ServerName] +&quot;;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConStringMaster">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -552,7 +581,7 @@
       DTS:CreationName=""
       DTS:DTSID="{AD690F21-5FA0-4993-8E81-2F3A55C772E7}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;C:\\BI17\\DMF\\grupparbete\\Basefiles\\Old\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
+      DTS:Expression="@[$Project::PathToFiles]  +&quot;Basefiles\\Old\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PathOld">
@@ -578,6 +607,17 @@
       DTS:ObjectName="SampelFile">
       <DTS:VariableValue
         DTS:DataType="8">C:\BI17\DMF\grupparbete\Basefiles\smallSampel.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B9A3DF64-2E17-4E4E-9B88-EDC37A4FAB8F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName]+&quot;\\&quot;+ @[$Project::Servername]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8">ZARTEZEN\sql2017johan</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

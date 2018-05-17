@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">ZARTEZEN</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAmVSHzaF6NE2sBAcxSJWOfQAAAAACAAAAAAAQZgAAAAEAACAAAAAoX3iQy+1wnlwdqImZ6OaApBgSD56J2CELlUIxBGM/4wAAAAAOgAAAAAIAACAAAAAy4bU8wfviBgJB2xhuxftEg1DCOUp2yanBtuXn0ar2iZAAAAARX2zazybFDLf23XCDwQeM5gZVABksUGi9+Qwp/Ru9F3xPp51vdDLvWSP9N5irWJ+fhZQEZzngC1uBhydWDDUEvofbjeDn6DQQuzUPRAOje4CLTKGV1q82CbhcT4GeeT8/Y4LAFnbt4xhb3fR9E3Rz9jnM+1tCsur+qtlqgzBhbCEXl+jApoz+Fbzo/c4f9MtAAAAAvrXW2i3SbgLPMZ+onLMW6LIGJPozi6QnJ83v3VHN0w+0yAHEI1b88xMTeXL9e8k5zQXpJpq9U4BeATBKKuU3/Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAmVSHzaF6NE2sBAcxSJWOfQAAAAACAAAAAAAQZgAAAAEAACAAAAC610DcWsVuxtrTlIxDS1yhFYOb5oe+MxZ9E/Hlb9EqRAAAAAAOgAAAAAIAACAAAADRBtpaZbQZ46LeJwvsbuGGW/cezWZMsYE2K4Tx0YlQQZAAAAD9xVRIZCPLc9B0x8mFigv+R/vR1ILywQRpFwzst5+KCxUgNqYgTCyg74uiT7poi78vJYT4gW5mrIM38dVhCX/jCZVFrTUWgr7Jh329dAMlToqIsapZQbRFKFaLmoc0fHfEE7Bajg4QOQpZ5G7y67N8oHzAqMeKGFCTumGFUbZ/M+MA4fYaUKhl3QgKWsYCfz9AAAAA7fh7ArkgdkvXuIitCbM1IwxFj5A3O5ccOoqhx6YSJlSh7YeUj95yBPWlm6BLjVaVokDPD+06IOwno0Fsplz3YA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -1131,10 +1131,10 @@
                 <SSIS:Property SSIS:Name="Name">FromSource2Staging</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AF342163-2197-43A0-AA27-90393E94FEF5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DE25BD1C-73B3-4977-8C5C-38539898A208}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1201,6 +1201,79 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Dynamic.DFMSource.UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.zartezen\sql2017johan.DFMStaging.InitialCatalog">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">DFMStaging</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.zartezen\sql2017johan.DFMStaging.Password">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.zartezen\sql2017johan.DFMStaging.RetainSameConnection">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.zartezen\sql2017johan.DFMStaging.ServerName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">ZARTEZEN\sql2017johan</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.zartezen\sql2017johan.DFMStaging.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>

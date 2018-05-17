@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{A22678D6-B2BC-40B7-BD96-0B8CF7B6CA17}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{E6DCBB10-3EC9-410D-9A46-09558F5F6394}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -568,6 +568,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{5BE96A63-871F-47DF-8802-6E68DE2A47EC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="isFileInLog"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{17197AAB-5E81-4B23-B4A0-04899149D886}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::PathToFiles]  +&quot;Basefiles\\New\\&quot;+ @[User::FileName]+&quot;.csv&quot;"
@@ -621,6 +631,19 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{A2467E79-9BD6-409B-8571-A14F0488788D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT COUNT(*) as OutPut&#xA;FROM [DFMLog].[dbo].[SSISLog]&#xA;WHERE [FileName] = '&quot;+@[User::FileName]+&quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLSelectFromLog">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT COUNT(*) as OutPut
+FROM [DFMLog].[dbo].[SSISLog]
+WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{3584851C-C8EB-4BF5-AA3B-27F675525B77}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;INSERT INTO [dbo].[SSISLog] VALUES ('&quot;+ @[User::FileName] +&quot;',&quot;+  (DT_WSTR, 10) @[User::RowCount]+&quot;,&quot;+  (DT_WSTR, 10) @[User::errorCount]+&quot;)&quot;"
@@ -642,7 +665,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Profiling Task"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2017 RC1; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -721,6 +744,7 @@
           DTS:refId="Package\For each in new files\Get one file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{01855194-427E-4638-9F48-AF1F5A4B5307}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -2613,6 +2637,29 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\For each in new files\Is File In log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E75A4014-D67B-434E-ABF5-C91874F8FB0B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Is File In log"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{45D1A077-DFBA-4BAB-A64B-13A8A22689CB}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::SQLSelectFromLog"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="OutPut"
+                SQLTask:DtsVariableName="User::isFileInLog" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\For each in new files\Move File to old"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
@@ -2621,7 +2668,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Move File to old"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -2641,7 +2688,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="WriteLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2653,14 +2700,6 @@
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{5DA80A2E-4C2E-4077-A991-E8406CCB628B}"
-          DTS:From="Package\For each in new files\Get one file"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\For each in new files\Move File to old" />
-        <DTS:PrecedenceConstraint
           DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{4142A4D3-72E9-4467-9547-88D2222CD83B}"
@@ -2668,6 +2707,16 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\For each in new files\WriteLog" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{9503529B-8280-425B-BC38-967DA012E18B}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::isFileInLog] ==1"
+          DTS:From="Package\For each in new files\Is File In log"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\For each in new files\Move File to old" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -2690,37 +2739,37 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Data Profiling Task"
-          TopLeft="186.793653974727,31.6758174377053" />
+          TopLeft="262.793655268999,31.6758174377053" />
         <NodeLayout
           Size="132.8,41.6"
           Id="Package\For each in new files\Get one file"
-          TopLeft="47.5936519992595,29.5581727726376" />
+          TopLeft="29.8793659833013,31.393466916024" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\For each in new files\Move File to old"
-          TopLeft="30.8571442000721,107.409153639542" />
+          TopLeft="202.285718548055,149.620918937428" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\For each in new files\WriteLog"
-          TopLeft="52.380953749832,182.154252951423" />
+          TopLeft="212.380956474616,232.318959537317" />
         <EdgeLayout
-          Id="Package\For each in new files.PrecedenceConstraints[Constraint]"
-          TopLeft="110.625398099666,71.1581727726377">
+          Id="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
+          TopLeft="275.733337511335,191.220918937428">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.2509808669041"
+              EndConnector="0,41.0980405998884"
               Start="0,0"
-              End="0,28.7509808669041">
+              End="0,33.5980405998884">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.7509808669041" />
+                    End="0,33.5980405998884" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2729,35 +2778,41 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\For each in new files\Is File In log"
+          TopLeft="211.428576800288,24.0000011668486" />
         <EdgeLayout
-          Id="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
-          TopLeft="110.019048974952,149.009153639542">
+          Id="Package\For each in new files.PrecedenceConstraints[Constraint 2]"
+          TopLeft="279.457147674171,65.6000011668486">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.1450993118813"
+              EndConnector="0,84.0209177705798"
               Start="0,0"
-              End="0,25.6450993118813">
+              End="0,76.5209177705798">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.6450993118813" />
+                    End="0,76.5209177705798" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,30.2604588852899,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="404.8,310.4"
-          Size="404.8,353.6"
+          PanelSize="430.4,328.8"
+          Size="430.4,372"
           Id="Package\For each in new files"
-          TopLeft="28.1269813892252,109.301962317233" />
+          TopLeft="104.126982683497,109.301962317233" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

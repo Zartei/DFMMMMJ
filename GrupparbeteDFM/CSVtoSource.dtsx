@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{E6DCBB10-3EC9-410D-9A46-09558F5F6394}">
+  DTS:VersionBuild="89"
+  DTS:VersionGUID="{DD458D09-A957-4BAF-BBF1-8D34033C7F61}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -574,7 +574,7 @@
       DTS:ObjectName="isFileInLog"
       DTS:RaiseChangedEvent="True">
       <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="3">1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -633,12 +633,12 @@
       DTS:CreationName=""
       DTS:DTSID="{A2467E79-9BD6-409B-8571-A14F0488788D}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT COUNT(*) as OutPut&#xA;FROM [DFMLog].[dbo].[SSISLog]&#xA;WHERE [FileName] = '&quot;+@[User::FileName]+&quot;'&quot;"
+      DTS:Expression="&quot;SELECT COUNT(*) as OUTPUT &#xA;FROM [DFMLog].[dbo].[SSISLog]&#xA;WHERE [FileName] = '&quot;+@[User::FileName]+&quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLSelectFromLog">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT COUNT(*) as OutPut
+        DTS:DataType="8">SELECT COUNT(*) as OUTPUT 
 FROM [DFMLog].[dbo].[SSISLog]
 WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_'</DTS:VariableValue>
     </DTS:Variable>
@@ -665,7 +665,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Profiling Task"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2017 RC1; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -744,7 +744,6 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           DTS:refId="Package\For each in new files\Get one file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{01855194-427E-4638-9F48-AF1F5A4B5307}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -2645,7 +2644,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           DTS:LocaleID="-1"
           DTS:ObjectName="Is File In log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2654,7 +2653,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
               SQLTask:SqlStatementSource="User::SQLSelectFromLog"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
-                SQLTask:ResultName="OutPut"
+                SQLTask:ResultName="OUTPUT"
                 SQLTask:DtsVariableName="User::isFileInLog" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -2663,12 +2662,13 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           DTS:refId="Package\For each in new files\Move File to old"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
+          DTS:Disabled="True"
           DTS:DTSID="{B6B61A58-C7C5-4B0D-8882-D6557591D6AC}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Move File to old"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -2688,7 +2688,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           DTS:LocaleID="-1"
           DTS:ObjectName="WriteLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2700,23 +2700,22 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
+          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{4142A4D3-72E9-4467-9547-88D2222CD83B}"
-          DTS:From="Package\For each in new files\Move File to old"
+          DTS:DTSID="{1B1B3845-0A7C-4EB7-B92E-00312B403090}"
+          DTS:From="Package\For each in new files\Get one file"
           DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
+          DTS:ObjectName="Constraint"
           DTS:To="Package\For each in new files\WriteLog" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{9503529B-8280-425B-BC38-967DA012E18B}"
-          DTS:EvalOp="1"
-          DTS:Expression="@[User::isFileInLog] ==1"
+          DTS:DTSID="{16186D50-E600-4D3F-93D6-F7801C28180C}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::isFileInLog] == 0"
           DTS:From="Package\For each in new files\Is File In log"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\For each in new files\Move File to old" />
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\For each in new files\Get one file" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -2747,29 +2746,57 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
         <NodeLayout
           Size="132.8,41.6"
           Id="Package\For each in new files\Get one file"
-          TopLeft="29.8793659833013,31.393466916024" />
+          TopLeft="45.3079376746198,104.805232651479" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\For each in new files\Is File In log"
+          TopLeft="42.8571453581051,25.2235305957728" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\For each in new files\Move File to old"
-          TopLeft="202.285718548055,149.620918937428" />
+          TopLeft="233.142861930692,22.9856230437687" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\For each in new files\WriteLog"
-          TopLeft="212.380956474616,232.318959537317" />
+          TopLeft="54.0952394933119,191.942488382817" />
         <EdgeLayout
           Id="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
-          TopLeft="275.733337511335,191.220918937428">
+          TopLeft="111.682541516362,66.8235305957728">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.0980405998884"
+              EndConnector="0,37.9817020557058"
               Start="0,0"
-              End="0,33.5980405998884">
+              End="0,30.4817020557058">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5980405998884" />
+                    End="0,30.4817020557058" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,7.2408510278529,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For each in new files.PrecedenceConstraints[Constraint]"
+          TopLeft="113.101588583966,146.405232651479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5372557313384"
+              Start="0,0"
+              End="0,38.0372557313384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0372557313384" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2778,39 +2805,11 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\For each in new files\Is File In log"
-          TopLeft="211.428576800288,24.0000011668486" />
-        <EdgeLayout
-          Id="Package\For each in new files.PrecedenceConstraints[Constraint 2]"
-          TopLeft="279.457147674171,65.6000011668486">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,84.0209177705798"
-              Start="0,0"
-              End="0,76.5209177705798">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,76.5209177705798" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,30.2604588852899,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430.4,328.8"
-          Size="430.4,372"
+          PanelSize="435.2,328.8"
+          Size="435.2,372"
           Id="Package\For each in new files"
           TopLeft="104.126982683497,109.301962317233" />
       </GraphLayout>
@@ -2856,7 +2855,9 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2878,7 +2879,9 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

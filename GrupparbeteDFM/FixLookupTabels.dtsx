@@ -7,20 +7,44 @@
   DTS:CreatorName="ZARTEZEN\rippe"
   DTS:DTSID="{B1568308-5EB1-40AD-A229-43941CFB0825}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
   DTS:LocaleID="2057"
   DTS:ObjectName="FixLookupTabels"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{2C0D8152-5ECC-4987-8BEC-75E6CEEAB1BE}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{6BA5BCB3-19CB-4625-AB25-4161E0DC39F9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[Dynamic.DFMSource]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{182A672E-4883-450D-AF17-880E2A502CFF}"
+      DTS:ObjectName="Dynamic.DFMSource">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConString]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-R2GCFSO\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dynamic.master]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FA1DBE3E-E757-4481-96B7-6A6DC5A548DB}"
+      DTS:ObjectName="Dynamic.master">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-R2GCFSO\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Dynamic Connection Manager]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{F1AFC306-3365-4CD7-AA21-960313F2AE74}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:ObjectName="Flat File Dynamic Connection Manager">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::FilePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -32,7 +56,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\BI17\DMF\grupparbete\Lookups\LookUpColor.csv">
+          DTS:ConnectionString="C:\BI17\DMF\grupparbete\Lookups\LookUpStaging.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -55,30 +79,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Zartezen\sql2017johan.DFMSource]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{182A672E-4883-450D-AF17-880E2A502CFF}"
-      DTS:ObjectName="Zartezen\sql2017johan.DFMSource">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::ConString]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[zartezen\sql2017johan.master]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{FA1DBE3E-E757-4481-96B7-6A6DC5A548DB}"
-      DTS:ObjectName="zartezen\sql2017johan.master">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -90,7 +90,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConString">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=DESKTOP-R2GCFSO\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -101,7 +101,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConStringMaster">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=DESKTOP-R2GCFSO\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -110,7 +110,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">LookUpColor</DTS:VariableValue>
+        DTS:DataType="8">LookUpStaging</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -121,7 +121,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\BI17\DMF\grupparbete\Lookups\LookUpColor.csv</DTS:VariableValue>
+        DTS:DataType="8">C:\BI17\DMF\grupparbete\Lookups\LookUpStaging.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -132,7 +132,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ServerName">
       <DTS:VariableValue
-        DTS:DataType="8">ZARTEZEN\sql2017</DTS:VariableValue>
+        DTS:DataType="8">DESKTOP-R2GCFSO\sql2017</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -145,13 +145,46 @@
       <DTS:VariableValue
         DTS:DataType="8">USE [DFMSource]
 GO
-IF OBJECT_ID(N'[dbo].[LookUpColor]',N'U') IS NOT NULL
-	DROP TABLE [dbo].[LookUpColor];
+IF OBJECT_ID(N'[dbo].[LookUpStaging]',N'U') IS NOT NULL
+	DROP TABLE [dbo].[LookUpStaging];
 GO
-CREATE TABLE [dbo].[LookUpColor](
+CREATE TABLE [dbo].[LookUpStaging](
 	[Name]  [nvarchar](50) ,
 	[ID] [INT]
 )</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{329A9F15-2834-4129-8645-9AD571C06ED8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;USE [DFMSource]&#xA;GO&#xA;DROP TABLE LookUpStaging&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLDropStaging">
+      <DTS:VariableValue
+        DTS:DataType="8">USE [DFMSource]
+GO
+DROP TABLE LookUpStaging</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2CE61D70-3A7B-46B0-9F45-76A462374A0A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;USE [DFMSource]&#xA;GO&#xA;IF OBJECT_ID(N'[dbo].[&quot;+ @[User::FileName] +&quot;]',N'U') IS NOT NULL&#xA;&#x9;DROP TABLE [dbo].[&quot;+ @[User::FileName] +&quot;];&#xA;GO&#xA;Select *&#xA;INTO [dbo].[&quot;+ @[User::FileName] +&quot;]&#xA;FROM LookUpStaging&#xA;GO&#xA;truncate table LookUpStaging&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLSelectInto">
+      <DTS:VariableValue
+        DTS:DataType="8">USE [DFMSource]
+GO
+IF OBJECT_ID(N'[dbo].[LookUpStaging]',N'U') IS NOT NULL
+	DROP TABLE [dbo].[LookUpStaging];
+GO
+Select *
+INTO [dbo].[LookUpStaging]
+FROM LookUpStaging
+GO
+truncate table LookUpStaging</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -166,6 +199,42 @@ CREATE TABLE [dbo].[LookUpColor](
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Drop LookUpStaging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{79642C35-C9D0-40D6-A92B-F87D179A3E33}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop LookUpStaging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{182A672E-4883-450D-AF17-880E2A502CFF}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::SQLDropStaging" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D90AA608-3F31-41FE-B138-3A48948139F5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FA1DBE3E-E757-4481-96B7-6A6DC5A548DB}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::SQLCreateTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Foreach Loop Container"
       DTS:CreationName="STOCK:FOREACHLOOP"
@@ -197,6 +266,7 @@ CREATE TABLE [dbo].[LookUpColor](
           DTS:refId="Package\Foreach Loop Container\Create Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{8A611142-1A41-4D45-AF0F-C67DE5F4DC84}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -215,7 +285,6 @@ CREATE TABLE [dbo].[LookUpColor](
           DTS:refId="Package\Foreach Loop Container\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{E169E6CE-5999-49FC-AF8E-D56CCFF6C0FA}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -248,8 +317,8 @@ CREATE TABLE [dbo].[LookUpColor](
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Dynamic Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Dynamic Connection Manager]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -357,7 +426,7 @@ CREATE TABLE [dbo].[LookUpColor](
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[LookUpColor]</property>
+                      name="OpenRowset">[dbo].[LookUpStaging]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -400,8 +469,8 @@ CREATE TABLE [dbo].[LookUpColor](
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Zartezen\sql2017johan.DFMSource]"
-                      connectionManagerRefId="Package.ConnectionManagers[Zartezen\sql2017johan.DFMSource]"
+                      connectionManagerID="Package.ConnectionManagers[Dynamic.DFMSource]"
+                      connectionManagerRefId="Package.ConnectionManagers[Dynamic.DFMSource]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -477,17 +546,63 @@ CREATE TABLE [dbo].[LookUpColor](
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8CBA94DE-4D8D-4269-99C6-52C05ADC5255}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{182A672E-4883-450D-AF17-880E2A502CFF}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::SQLSelectInto" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7206FD2D-A9CD-4E56-8237-95030E7B64CB}"
+          DTS:From="Package\Foreach Loop Container\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach Loop Container\Execute SQL Task" />
+      </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{18B535F8-5C11-4F53-8F6F-2B72A6969C4B}"
-          DTS:ObjectName="{18B535F8-5C11-4F53-8F6F-2B72A6969C4B}"
+          DTS:DTSID="{6DAE571D-65C7-4E4D-B76A-C7D2CE3AC67C}"
+          DTS:ObjectName="{6DAE571D-65C7-4E4D-B76A-C7D2CE3AC67C}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6A446A9C-9964-46FD-BB09-373F1D2B2E71}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{AA032981-0FF5-4124-88AC-E8AD1CE04285}"
+      DTS:From="Package\Foreach Loop Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Drop LookUpStaging" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -499,22 +614,124 @@ CREATE TABLE [dbo].[LookUpColor](
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.4,41.6"
+          Size="138.666666666667,41.3333333333334"
           Id="Package\Foreach Loop Container\Create Table"
           TopLeft="36.0000012942725,25.6000016044168" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150.666666666667,41.3333333333334"
           Id="Package\Foreach Loop Container\Data Flow Task"
           TopLeft="38.8571442000721,94.7294143386366" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Foreach Loop Container\Execute SQL Task"
+          TopLeft="31.3888881231348,177.722216087911" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="113.78968282827,136.06274767197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.659468415941"
+              Start="0,0"
+              End="0,34.159468415941">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.159468415941" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="357.6,217.6"
-          Size="357.6,260.8"
+          PanelSize="400,245.333333333334"
+          Size="400,288.666666666667"
           Id="Package\Foreach Loop Container"
           TopLeft="20.000000340598,122.964707606886" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Execute SQL Task"
+          TopLeft="107.638887284944,36.1111104653941" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="189.638887284944,78.7777771320608">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.9722202776798,44.1869304748252"
+              Start="0,0"
+              End="-34.9722202776798,36.6869304748252">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4065321562701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.4065321562701"
+                    Point2="0,26.4065321562701"
+                    Point3="-4,26.4065321562701" />
+                  <mssgle:LineSegment
+                    End="-30.9722202776798,26.4065321562701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.9722202776798,26.4065321562701"
+                    Point2="-34.9722202776798,26.4065321562701"
+                    Point3="-34.9722202776798,30.4065321562701" />
+                  <mssgle:LineSegment
+                    End="-34.9722202776798,36.6869304748252" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Drop LookUpStaging"
+          TopLeft="334.722217234473,38.72222236428" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="285.333333673931,122.964707606886">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.388883560541,-41.5758185759394"
+              Start="0,0"
+              End="137.388883560541,-34.0758185759394">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-12.7297118572505" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-12.7297118572505"
+                    Point2="0,-16.7297118572505"
+                    Point3="4,-16.7297118572505" />
+                  <mssgle:LineSegment
+                    End="133.388883560541,-16.7297118572505" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133.388883560541,-16.7297118572505"
+                    Point2="137.388883560541,-16.7297118572505"
+                    Point3="137.388883560541,-20.7297118572505" />
+                  <mssgle:LineSegment
+                    End="137.388883560541,-34.0758185759394" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -524,13 +741,13 @@ CREATE TABLE [dbo].[LookUpColor](
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
-          TopLeft="196.8,84.8" />
-        <NodeLayout
-          Size="170.4,41.6"
+          Size="170.666666666667,41.3333333333334"
           Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
           TopLeft="191.2,244.8" />
+        <NodeLayout
+          Size="150.666666666667,41.3333333333334"
+          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
+          TopLeft="196.8,84.8" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="274.2,126.4">

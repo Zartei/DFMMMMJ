@@ -5,14 +5,15 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ZARTEZEN"
   DTS:CreatorName="ZARTEZEN\rippe"
+  DTS:DelayValidation="True"
   DTS:DTSID="{A82738D2-2847-4A22-A495-317CD30451E9}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.0800.98"
   DTS:LocaleID="2057"
   DTS:ObjectName="Create RawData and SSISLog"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{0AC079F2-A496-405F-8846-144AF1C18FE0}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{0AB10B33-4CCE-4691-8A38-D0E72FC8B164}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,13 +22,38 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{5B9AB146-4660-475A-85FB-63AF8A14B168}"
       DTS:ObjectName="zartezen\sql2017johan.master">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConStringDFMSource]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=zartezen\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{246D9240-52EC-4B88-954D-1471A9B902AF}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Data Source=&quot;+ @[User::ServerName] +&quot;;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConStringDFMSource">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4E99337A-5962-4F8E-BDEF-B90EEA2EAFD3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName]+&quot;\\&quot;+ @[$Project::Servername]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8">ZARTEZEN\sql2017johan</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Create RawData and SSISLog"

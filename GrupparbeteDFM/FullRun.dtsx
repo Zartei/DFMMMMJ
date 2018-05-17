@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FullRun"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{B7558DA5-2D29-45BA-B68E-239B6F5FC244}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{A9D225AC-CB3B-4FB0-872C-7D0B5B40E4EC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -130,74 +130,74 @@
           TopLeft="146.285716776945,52.6117654437425" />
         <NodeLayout
           Size="182.4,41.6"
-          Id="Package\CreateTabels"
-          TopLeft="147.428573939265,137.035296039515" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="238.057145358105,94.2117654437425">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.8235305957729"
-              Start="0,0"
-              End="0,35.3235305957729">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.3235305957729" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\Create LookupTabels"
+          TopLeft="147.428573939265,194.541179198955" />
         <NodeLayout
           Size="182.4,41.6"
-          Id="Package\Create LookupTabels"
-          TopLeft="148.000002520425,219.01176777744" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="238.914288229845,178.635296039515">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.3764717379243"
-              Start="0,0"
-              End="0,32.8764717379243">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.8764717379243" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\CreateTabels"
+          TopLeft="146.857145358105,122.964707606886" />
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Get New CSV"
-          TopLeft="145.714288195785,316.282357376917" />
+          TopLeft="144.000002452305,264.894121362099" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="238.057145358105,260.61176777744">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="237.771431067525,94.2117654437425">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.6705895994774"
+              EndConnector="0,28.7529421631437"
               Start="0,0"
-              End="0,48.1705895994774">
+              End="0,21.2529421631437">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.1705895994774" />
+                    End="0,21.2529421631437" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="238.342859648685,164.564707606886">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.9764715920689"
+              Start="0,0"
+              End="0,22.4764715920689">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4764715920689" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="236.914288195785,236.141179198955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7529421631436"
+              Start="0,0"
+              End="0,21.2529421631436">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2529421631436" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

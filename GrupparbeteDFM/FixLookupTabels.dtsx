@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FixLookupTabels"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{6BA5BCB3-19CB-4625-AB25-4161E0DC39F9}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{842C0E5F-E2D5-4910-85EE-734FE5A024A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -238,6 +238,7 @@ truncate table LookUpStaging</DTS:VariableValue>
     <DTS:Executable
       DTS:refId="Package\Foreach Loop Container"
       DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:DelayValidation="True"
       DTS:Description="Foreach Loop Container"
       DTS:DTSID="{1A5042AC-2480-4FED-BA23-7DEC194BCCED}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
@@ -272,7 +273,7 @@ truncate table LookUpStaging</DTS:VariableValue>
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -555,7 +556,7 @@ truncate table LookUpStaging</DTS:VariableValue>
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -616,6 +617,14 @@ truncate table LookUpStaging</DTS:VariableValue>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Drop LookUpStaging"
+          TopLeft="334.722217234473,38.72222236428" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Execute SQL Task"
+          TopLeft="107.638887284944,36.1111104653941" />
+        <NodeLayout
           Size="138.666666666667,41.3333333333334"
           Id="Package\Foreach Loop Container\Create Table"
           TopLeft="36.0000012942725,25.6000016044168" />
@@ -652,14 +661,10 @@ truncate table LookUpStaging</DTS:VariableValue>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="400,245.333333333334"
+          PanelSize="400,246"
           Size="400,288.666666666667"
           Id="Package\Foreach Loop Container"
           TopLeft="20.000000340598,122.964707606886" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Execute SQL Task"
-          TopLeft="107.638887284944,36.1111104653941" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="189.638887284944,78.7777771320608">
@@ -694,10 +699,6 @@ truncate table LookUpStaging</DTS:VariableValue>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\Drop LookUpStaging"
-          TopLeft="334.722217234473,38.72222236428" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="285.333333673931,122.964707606886">

@@ -12,11 +12,48 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Create And Populate Dim DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{6B1DBD8F-2867-4F7F-84DE-21528BABC28A}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{78297248-D0D3-4CB2-8166-7407B830E4D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DimAgency]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D94A7F70-0D11-43C7-91D8-CFB1D40C101F}"
+      DTS:ObjectName="DimAgency">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\BI17\DMF\grupparbete\Dims\DimAgency.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Code"
+              DTS:DTSID="{EA2C74BA-B5C7-46FC-AE66-A3AC78529044}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Agency"
+              DTS:DTSID="{958596AF-BFFE-46DC-B352-405F2790FE9E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DimBodyType]"
       DTS:CreationName="FLATFILE"
@@ -321,7 +358,276 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8A12A2B6-DE6B-4AED-8426-1E86B480939A}"
-          SQLTask:SqlStatementSource="USE DFMDW&#xA;GO&#xA;&#xA;IF OBJECT_ID (N'dbo.DimBodyType', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimBodyType];&#xA;GO&#xA;CREATE TABLE [dbo].[DimBodyType](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimColor', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimColor];&#xA;CREATE TABLE [dbo].[DimColor](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimCarBrands', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimCarBrands];&#xA;CREATE TABLE [dbo].[DimCarBrands](&#xA;    ID int,&#xA;    Brand [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimDistrict', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimDistrict];&#xA;CREATE TABLE [dbo].[DimDistrict](&#xA;    Pricinct int,&#xA;    Borough [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimViolationCode', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimViolationCode];&#xA;CREATE TABLE [dbo].[DimViolationCode](&#xA;    Code int,&#xA;    [Definition] [nvarchar](200),&#xA;    ManhattanLower int,&#xA;    Other int&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimStates', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimStates];&#xA;CREATE TABLE [dbo].[DimStates](&#xA;    [State Name] [nvarchar](50),&#xA;    StateCode nvarchar(2)&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE DFMDW&#xA;GO&#xA;&#xA;IF OBJECT_ID (N'dbo.DimBodyType', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimBodyType];&#xA;GO&#xA;CREATE TABLE [dbo].[DimBodyType](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimColor', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimColor];&#xA;CREATE TABLE [dbo].[DimColor](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimCarBrands', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimCarBrands];&#xA;CREATE TABLE [dbo].[DimCarBrands](&#xA;    ID int,&#xA;    Brand [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimDistrict', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimDistrict];&#xA;CREATE TABLE [dbo].[DimDistrict](&#xA;    Pricinct int,&#xA;    Borough [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimViolationCode', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimViolationCode];&#xA;CREATE TABLE [dbo].[DimViolationCode](&#xA;    Code int,&#xA;    [Definition] [nvarchar](200),&#xA;    ManhattanLower int,&#xA;    Other int&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimStates', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimStates];&#xA;CREATE TABLE [dbo].[DimStates](&#xA;    [State Name] [nvarchar](50),&#xA;    StateCode nvarchar(2)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimAgency', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimAgency];&#xA;CREATE TABLE [dbo].[DimAgency](&#xA;    [Agency Name] [nvarchar](50),&#xA;    [Agency Code] nvarchar(1)&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimAgency"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7698B833-AC13-4E45-86F9-E39821F5A9E3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimAgency"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DimAgency\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimAgency\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DimAgency]"
+                  connectionManagerRefId="Package.ConnectionManagers[DimAgency]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].Columns[Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Code]"
+                      length="1"
+                      lineageId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].Columns[Agency]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Agency]"
+                      length="50"
+                      lineageId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].Columns[Agency]"
+                      name="Agency"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="1"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Agency]"
+                      dataType="wstr"
+                      length="50"
+                      name="Agency" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimAgency\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimAgency]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimAgency\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Dynamic.DFMDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[Dynamic.DFMDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Code]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Code"
+                      externalMetadataColumnId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Agency Code]"
+                      lineageId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].Columns[Code]" />
+                    <inputColumn
+                      refId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Agency]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Agency"
+                      externalMetadataColumnId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Agency Name]"
+                      lineageId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output].Columns[Agency]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Agency Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Agency Name" />
+                    <externalMetadataColumn
+                      refId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Agency Code]"
+                      dataType="wstr"
+                      length="1"
+                      name="Agency Code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimAgency\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimAgency\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimAgency\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimAgency\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimAgency\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DimAgency.Paths[Flat File Source Output]"
+              endId="Package\DimAgency\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\DimAgency\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2035,6 +2341,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\ViolationCode" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{11641D46-DE12-40D6-A540-0A2988AB2B23}"
+      DTS:From="Package\ViolationCode"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\DimAgency" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2075,7 +2389,7 @@
         <NodeLayout
           Size="142.4,41.6"
           Id="Package\ViolationCode"
-          TopLeft="232.000003950937,287.717645394348" />
+          TopLeft="230.857146788617,270.588233389409" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="159.771428853638,46.4941180074091">
@@ -2188,18 +2502,44 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="305.914289728476,229.552939537735">
+          TopLeft="305.342861147317,229.552939537735">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.1647058566138"
+              EndConnector="0,41.0352938516736"
               Start="0,0"
-              End="0,50.6647058566138">
+              End="0,33.5352938516736">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.6647058566138" />
+                    End="0,33.5352938516736" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\DimAgency"
+          TopLeft="29.1428576391571,269.176474363334" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="230.857146788617,290.682353876371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70.5142891494601,0"
+              Start="0,0"
+              End="-63.0142891494601,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-63.0142891494601,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2215,7 +2555,7 @@
     design-time-name="Package\DimBodyType">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DimBodyType\OLE DB Destination"
@@ -2243,7 +2583,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2490,7 +2832,7 @@
     design-time-name="Package\ViolationCode">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\ViolationCode\OLE DB Destination"
@@ -2518,7 +2860,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2526,6 +2870,69 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\ViolationCode\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimAgency">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\DimAgency\Flat File Source"
+          TopLeft="104.000001771109,58.7294125883637" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DimAgency\OLE DB Destination"
+          TopLeft="118.285716300108,184.141179053099" />
+        <EdgeLayout
+          Id="Package\DimAgency.Paths[Flat File Source Output]"
+          TopLeft="179.200001771109,100.329412588364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.2857145289986,83.811766464735"
+              Start="0,0"
+              End="24.2857145289986,76.311766464735">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9058832323675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.9058832323675"
+                    Point2="0,41.9058832323675"
+                    Point3="4,41.9058832323675" />
+                  <mssgle:LineSegment
+                    End="20.2857145289986,41.9058832323675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.2857145289986,41.9058832323675"
+                    Point2="24.2857145289986,41.9058832323675"
+                    Point3="24.2857145289986,45.9058832323675" />
+                  <mssgle:LineSegment
+                    End="24.2857145289986,76.311766464735" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimAgency\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

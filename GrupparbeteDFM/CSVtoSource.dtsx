@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="89"
-  DTS:VersionGUID="{DD458D09-A957-4BAF-BBF1-8D34033C7F61}">
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{2214ECF9-0C1D-4077-8E5E-62244CC9E9DB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2760,6 +2760,28 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           Id="Package\For each in new files\WriteLog"
           TopLeft="54.0952394933119,191.942488382817" />
         <EdgeLayout
+          Id="Package\For each in new files.PrecedenceConstraints[Constraint]"
+          TopLeft="113.101588583966,146.405232651479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5372557313384"
+              Start="0,0"
+              End="0,38.0372557313384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0372557313384" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\For each in new files.PrecedenceConstraints[Constraint 1]"
           TopLeft="111.682541516362,66.8235305957728">
           <EdgeLayout.Curve>
@@ -2783,33 +2805,11 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For each in new files.PrecedenceConstraints[Constraint]"
-          TopLeft="113.101588583966,146.405232651479">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.5372557313384"
-              Start="0,0"
-              End="0,38.0372557313384">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.0372557313384" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="435.2,328.8"
-          Size="435.2,372"
+          PanelSize="435.2,255.2"
+          Size="435.2,298.4"
           Id="Package\For each in new files"
           TopLeft="104.126982683497,109.301962317233" />
       </GraphLayout>
@@ -2855,9 +2855,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2879,9 +2877,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

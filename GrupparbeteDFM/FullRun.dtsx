@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FullRun"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{A9D225AC-CB3B-4FB0-872C-7D0B5B40E4EC}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{4E04ACB0-9D9B-49E7-862D-0D5A81146E80}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -137,7 +137,7 @@
           Id="Package\CreateTabels"
           TopLeft="146.857145358105,122.964707606886" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.4,56.8"
           Id="Package\Get New CSV"
           TopLeft="144.000002452305,264.894121362099" />
         <EdgeLayout
@@ -190,14 +190,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.7529421631436"
+              EndConnector="0,28.752942163144"
               Start="0,0"
-              End="0,21.2529421631436">
+              End="0,21.252942163144">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2529421631436" />
+                    End="0,21.252942163144" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

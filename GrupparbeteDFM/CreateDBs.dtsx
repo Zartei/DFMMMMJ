@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="CreateDBs"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{83BB6A18-C35F-467F-88F4-DDC9E64DFA32}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{59DFF0F4-05EA-489A-8573-22185E09B58E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -39,7 +39,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConStringMaster">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -50,7 +50,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ServerName">
       <DTS:VariableValue
-        DTS:DataType="8">ZARTEZEN\sql2017johan</DTS:VariableValue>
+        DTS:DataType="8">ZARTEZEN\sql2017</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -68,7 +68,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{0229A3FE-1898-4AAE-B556-D255FEB8E0B6}"
-          SQLTask:SqlStatementSource="USE master&#xA;if db_id('DFMLog') is null&#xA;&#x9; CREATE DATABASE DFMLog&#xA;&#xA;GO&#xA;if db_id('DFMSource') is null&#xA;&#x9; CREATE DATABASE DFMSource&#xA;&#xA;GO&#xA;if db_id('DFMStaging') is null&#xA;&#x9; CREATE DATABASE DFMStaging&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE master&#xA;if db_id('DFMLog') is null&#xA;&#x9; CREATE DATABASE DFMLog&#xA;&#xA;GO&#xA;if db_id('DFMSource') is null&#xA;&#x9; CREATE DATABASE DFMSource&#xA;&#xA;GO&#xA;if db_id('DFMStaging') is null&#xA;&#x9; CREATE DATABASE DFMStaging&#xA;&#xA;GO&#xA;if db_id('DFMDW') is null&#xA;&#x9; CREATE DATABASE DFMDW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

@@ -5,6 +5,7 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ZARTEZEN"
   DTS:CreatorName="ZARTEZEN\rippe"
+  DTS:DelayValidation="True"
   DTS:DTSID="{23F4B28C-A8C3-459B-B1C5-78E416D6BC62}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.0800.98"
@@ -12,8 +13,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{2214ECF9-0C1D-4077-8E5E-62244CC9E9DB}">
+  DTS:VersionBuild="91"
+  DTS:VersionGUID="{D7C35668-2313-446B-92A1-D63145B6CC26}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

@@ -5,14 +5,15 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ZARTEZEN"
   DTS:CreatorName="ZARTEZEN\rippe"
+  DTS:DelayValidation="True"
   DTS:DTSID="{2D1796E1-7060-46F8-AE72-06B805BA1A3F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.0800.98"
   DTS:LocaleID="2057"
   DTS:ObjectName="FromSource2Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{8F25CEFB-FCB5-4F90-9823-EF5891050C9B}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{EC088905-4222-4F71-8D67-914CEF50B2E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5438,44 +5439,44 @@ where [refTable].[Name] = ?</property>
               startId="Package\Data Flow Task\Try to get hour.Outputs[Derived Column Error Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output7]"
-              endId="Package\Data Flow Task\Location Merge.Inputs[Union All Input 2]"
+              endId="Package\Data Flow Task\Violation Code Merge.Inputs[Union All Input 1]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Fix Violation Location.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\Cast Violation Code.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output6]"
-              endId="Package\Data Flow Task\Union All 2.Inputs[Union All Input 1]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output5]"
-              endId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Try to get hour.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output4]"
-              endId="Package\Data Flow Task\Union All 2.Inputs[Union All Input 2]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Set broken hours.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
-              endId="Package\Data Flow Task\Violation Code Merge.Inputs[Union All Input 2]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Fix Violation Codes.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task\Cast Violation Code.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
               endId="Package\Data Flow Task\Location Merge.Inputs[Union All Input 1]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Cast Violation Location.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output3]"
-              endId="Package\Data Flow Task\Violation Code Merge.Inputs[Union All Input 1]"
+              refId="Package\Data Flow Task.Paths[Derived Column Output5]"
+              endId="Package\Data Flow Task\Cast Violation Code.Inputs[Derived Column Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Cast Violation Code.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output4]"
+              endId="Package\Data Flow Task\Violation Code Merge.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Fix Violation Codes.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Try to get hour.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\Union All 2.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Location Merge.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Fix Violation Location.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output3]"
+              endId="Package\Data Flow Task\Union All 2.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Set broken hours.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output]"
               endId="Package\Data Flow Task\Look up Make.Inputs[Lookup Input]"
@@ -5492,17 +5493,17 @@ where [refTable].[Name] = ?</property>
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\Get RawData.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Union All Output 12]"
-              endId="Package\Data Flow Task\Insert into Staging.Inputs[OLE DB Destination Input]"
-              name="Union All Output 1"
-              startId="Package\Data Flow Task\Union All 2.Outputs[Union All Output 1]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              refId="Package\Data Flow Task.Paths[Union All Output 11]"
               endId="Package\Data Flow Task\Cast Violation Location.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Data Flow Task\Violation Code Merge.Outputs[Union All Output 1]" />
             <path
-              refId="Package\Data Flow Task.Paths[Union All Output 11]"
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\Data Flow Task\Insert into Staging.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union All 2.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 12]"
               endId="Package\Data Flow Task\Try to get hour.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Data Flow Task\Location Merge.Outputs[Union All Output 1]" />
@@ -5600,7 +5601,7 @@ where [refTable].[Name] = ?</property>
           Id="Package\Data Flow Task\Cast Violation Location"
           TopLeft="215.428575097298,306.776473342341" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output4]"
           TopLeft="212.342857911635,234.305884909712">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5622,7 +5623,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output5]"
           TopLeft="442.857150398956,163.623531179198">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5656,7 +5657,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output6]"
           TopLeft="338.565083452796,348.376473342341">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5798,7 +5799,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 12]"
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
           TopLeft="173.371430420389,717.694120924531">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5834,7 +5835,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 11]"
+          Id="Package\Data Flow Task.Paths[Union All Output 12]"
           TopLeft="337.476194946134,430.614383957323">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5856,7 +5857,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          Id="Package\Data Flow Task.Paths[Union All Output 11]"
           TopLeft="338.342861385735,254.258826051864">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5936,7 +5937,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output7]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
           TopLeft="215.542857775396,406.671900314828">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5958,7 +5959,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output6]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
           TopLeft="332.628575710374,625.558174409467">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5992,7 +5993,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output5]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
           TopLeft="333.873020230507,541.375168226243">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6014,7 +6015,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output4]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output3]"
           TopLeft="118.647619712596,539.654905339307">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6048,7 +6049,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output3]"
+          Id="Package\Data Flow Task.Paths[Derived Column Output7]"
           TopLeft="337.895242138623,163.341178177962">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6097,7 +6098,7 @@ where [refTable].[Name] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Insert into Staging">
+    design-time-name="Package\Data Flow Task\Get RawData">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6106,29 +6107,6 @@ where [refTable].[Name] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Look up Make">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[LookUpMake]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6156,7 +6134,30 @@ where [refTable].[Name] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get RawData">
+    design-time-name="Package\Data Flow Task\Look up Make">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[LookUpMake]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Insert into Staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

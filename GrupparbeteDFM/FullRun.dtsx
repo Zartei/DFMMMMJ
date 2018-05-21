@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FullRun"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{A9999E34-3E16-41D1-9256-96526E6C80E3}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{E3EAF345-C427-457E-A553-5044FE635A1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -30,6 +30,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
+          <PackageName>CleanUp.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -97,7 +98,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Create RawData and SSISLog.dtsx</PackageName>
+          <PackageName>CreateTabels.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -114,6 +115,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
+          <PackageName>Staging 2 DW.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -223,6 +225,14 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Clean Up"
+          TopLeft="313.485719229251,330.352945809546" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Create and pop dim tabels DW"
+          TopLeft="37.1428577753964,245.176473634054" />
+        <NodeLayout
           Size="182.4,41.6"
           Id="Package\Create DBs"
           TopLeft="51.4285723043946,12.0941174239853" />
@@ -235,9 +245,17 @@
           Id="Package\CreateTabels"
           TopLeft="263.428575914733,14.5411762818333" />
         <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\From Staging into DW"
+          TopLeft="53.1428580478748,332.658827802137" />
+        <NodeLayout
           Size="182.4,44"
           Id="Package\Get New CSV"
           TopLeft="48.5714293985951,86.1176478739023" />
+        <NodeLayout
+          Size="181.6,46.4"
+          Id="Package\Source 2 staging"
+          TopLeft="52.5714294667149,159.905877471052" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="233.828572304395,34.1176468529093">
@@ -304,10 +322,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181.6,46.4"
-          Id="Package\Source 2 staging"
-          TopLeft="52.5714294667149,159.905877471052" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="141.571429432655,130.117647873902">
@@ -330,14 +344,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="222.4,41.6"
-          Id="Package\Create and pop dim tabels DW"
-          TopLeft="37.1428577753964,245.176473634054" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\From Staging into DW"
-          TopLeft="53.1428580478748,332.658827802137" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="145.857143621056,206.305877471052">
@@ -382,10 +388,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Clean Up"
-          TopLeft="313.485719229251,330.352945809546" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="235.542858047875,352.305886805842">

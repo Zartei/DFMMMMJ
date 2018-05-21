@@ -1,0 +1,95 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/21/2018 11:15:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ZARTEZEN"
+  DTS:CreatorName="ZARTEZEN\rippe"
+  DTS:DTSID="{EF8FE4FA-020E-48F1-B848-9A5CF8F13F11}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Staging 2 DW"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{25C58CF2-C011-42EC-A6E0-630907250D8F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dynamic.master]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{19D90A32-4A90-408B-87BD-32077C55F286}"
+      DTS:ObjectName="Dynamic.master">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{74185836-C2D7-4CEB-8292-AA01AE54FFD5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Data Source=&quot;+ @[User::ServerName] +&quot;;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConStringMaster">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5922E8CC-F225-4A88-ADBD-D32FE97D3849}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName]+&quot;\\&quot;+ @[$Project::Servername]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8">ZARTEZEN\sql2017johan</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SELECT INTO DW"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8029D97A-606D-4028-93D0-C281A2AB6AB5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SELECT INTO DW"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{19D90A32-4A90-408B-87BD-32077C55F286}"
+          SQLTask:SqlStatementSource="USE DFMDW&#xA;GO&#xA;INSERT INTO dbo.DataW ([PlateID]&#xA;      ,[RegistrationState]&#xA;      ,[PlateType]&#xA;      ,[IssueDate]&#xA;      ,[ViolationCode]&#xA;      ,[VehicleBodyTypeID]&#xA;      ,[VehicleMakeID]&#xA;      ,[IssuingAgency]&#xA;      ,[ViolationLocation]&#xA;      ,[IssuerCode]&#xA;      ,[ViolationTime]&#xA;      ,[ViolationCounty]&#xA;      ,[HouseNumber]&#xA;      ,[StreetName]&#xA;      ,[IntersectingStreet]&#xA;      ,[VehicleColorID]&#xA;      ,[VehicleYear]&#xA;      ,[ViolationPostCode]&#xA;      ,[ViolationDescription])&#xA;SELECT [PlateID]&#xA;      ,[RegistrationState]&#xA;      ,[PlateType]&#xA;      ,[IssueDate]&#xA;      ,[ViolationCode]&#xA;      ,[VehicleBodyTypeID]&#xA;      ,[VehicleMakeID]&#xA;      ,[IssuingAgency]&#xA;      ,[ViolationLocation]&#xA;      ,[IssuerCode]&#xA;      ,[ViolationTime]&#xA;      ,[ViolationCounty]&#xA;      ,[HouseNumber]&#xA;      ,[StreetName]&#xA;      ,[IntersectingStreet]&#xA;      ,[VehicleColorID]&#xA;      ,[VehicleYear]&#xA;      ,[ViolationPostCode]&#xA;      ,[ViolationDescription] FROM DFMStaging.dbo.Staging" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\SELECT INTO DW"
+          TopLeft="32.0000005449568,37.9294122966516" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

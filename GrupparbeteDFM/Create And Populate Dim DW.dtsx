@@ -5,14 +5,15 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ZARTEZEN"
   DTS:CreatorName="ZARTEZEN\rippe"
+  DTS:DelayValidation="True"
   DTS:DTSID="{7E52E78A-9C74-4EB5-ACE0-E764EBF5EEAA}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.0800.98"
   DTS:LocaleID="2057"
   DTS:ObjectName="Create And Populate Dim DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{8EEBC67F-CB79-44CA-8C8C-F3C468455711}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{6B1DBD8F-2867-4F7F-84DE-21528BABC28A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -308,6 +309,7 @@
     <DTS:Executable
       DTS:refId="Package\Create Tabels"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{D9D364B7-F626-4C55-9E9B-839E42B964DE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -319,12 +321,13 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8A12A2B6-DE6B-4AED-8426-1E86B480939A}"
-          SQLTask:SqlStatementSource="USE DFMDW&#xA;GO&#xA;&#xA;IF OBJECT_ID (N'dbo.DimBodyType', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimBodyType];&#xA;GO&#xA;CREATE TABLE [dbo].[DimBodyType](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimColor', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo.DimColor];&#xA;CREATE TABLE [dbo].[DimColor](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimCarBrands', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimCarBrands];&#xA;CREATE TABLE [dbo].[DimCarBrands](&#xA;    ID int,&#xA;    Brand [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimDistrict', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimDistrict];&#xA;CREATE TABLE [dbo].[DimDistrict](&#xA;    Pricinct int,&#xA;    Borough [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimViolationCode', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimViolationCode];&#xA;CREATE TABLE [dbo].[DimViolationCode](&#xA;    Code int,&#xA;    [Definition] [nvarchar](200),&#xA;    ManhattanLower int,&#xA;    Other int&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimStates', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimStates];&#xA;CREATE TABLE [dbo].[DimStates](&#xA;    [State Name] [nvarchar](50),&#xA;    StateCode nvarchar(2)&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE DFMDW&#xA;GO&#xA;&#xA;IF OBJECT_ID (N'dbo.DimBodyType', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimBodyType];&#xA;GO&#xA;CREATE TABLE [dbo].[DimBodyType](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimColor', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimColor];&#xA;CREATE TABLE [dbo].[DimColor](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimCarBrands', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimCarBrands];&#xA;CREATE TABLE [dbo].[DimCarBrands](&#xA;    ID int,&#xA;    Brand [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimDistrict', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimDistrict];&#xA;CREATE TABLE [dbo].[DimDistrict](&#xA;    Pricinct int,&#xA;    Borough [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimViolationCode', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimViolationCode];&#xA;CREATE TABLE [dbo].[DimViolationCode](&#xA;    Code int,&#xA;    [Definition] [nvarchar](200),&#xA;    ManhattanLower int,&#xA;    Other int&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimStates', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimStates];&#xA;CREATE TABLE [dbo].[DimStates](&#xA;    [State Name] [nvarchar](50),&#xA;    StateCode nvarchar(2)&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DimBodyType"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{89FEE2F6-6DAF-465B-8AE6-24FD55B76DA4}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -590,6 +593,7 @@
     <DTS:Executable
       DTS:refId="Package\DimCarBrands"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{9cfefd5b-317d-44ee-bdb8-7d61a24efe24}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -848,6 +852,7 @@
     <DTS:Executable
       DTS:refId="Package\DimColor"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{3de937ee-1e59-4db3-ada8-0a58b94971f5}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -1113,6 +1118,7 @@
     <DTS:Executable
       DTS:refId="Package\DimDistrict"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{0b5d34fb-15b9-454c-8160-190ff6313c86}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -1378,6 +1384,7 @@
     <DTS:Executable
       DTS:refId="Package\State Names"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{e6152a6d-28a7-4838-970a-47189ae0060d}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -1647,6 +1654,7 @@
     <DTS:Executable
       DTS:refId="Package\ViolationCode"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{f20fe747-26ef-4b57-ad40-e0eedc774b23}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -1718,7 +1726,7 @@
                       length="200"
                       lineageId="Package\ViolationCode\Flat File Source.Outputs[Flat File Source Output].Columns[DEFINITION]"
                       name="DEFINITION"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -2048,6 +2056,26 @@
           Size="143.2,41.6"
           Id="Package\DimBodyType"
           TopLeft="236.571432600216,28.7529415797198" />
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\DimCarBrands"
+          TopLeft="230.857146788617,116.235295747803" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\DimColor"
+          TopLeft="33.1428577072766,110.776470716932" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\DimDistrict"
+          TopLeft="25.1428575710374,184.847058566136" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\State Names"
+          TopLeft="239.428575506016,187.952939537735" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\ViolationCode"
+          TopLeft="232.000003950937,287.717645394348" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="159.771428853638,46.4941180074091">
@@ -2070,26 +2098,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\DimCarBrands"
-          TopLeft="230.857146788617,116.235295747803" />
-        <NodeLayout
-          Size="121.6,41.6"
-          Id="Package\DimColor"
-          TopLeft="33.1428577072766,110.776470716932" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\DimDistrict"
-          TopLeft="25.1428575710374,184.847058566136" />
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\State Names"
-          TopLeft="239.428575506016,187.952939537735" />
-        <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\ViolationCode"
-          TopLeft="232.000003950937,287.717645394348" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="305.914289694416,70.3529415797198">
@@ -2209,13 +2217,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\DimBodyType\Flat File Source"
-          TopLeft="324,81.6" />
-        <NodeLayout
           Size="170.4,41.6"
           Id="Package\DimBodyType\OLE DB Destination"
           TopLeft="315.2,255.2" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\DimBodyType\Flat File Source"
+          TopLeft="324,81.6" />
         <EdgeLayout
           Id="Package\DimBodyType.Paths[Flat File Source Output]"
           TopLeft="399.8,123.2">
@@ -2258,15 +2266,15 @@
     design-time-name="Package\DimCarBrands">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\DimCarBrands\DimCarBrands"
-          TopLeft="324,81.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="126.4,41.6"
           Id="Package\DimCarBrands\CarBrands"
           TopLeft="301.6,209.6" />
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\DimCarBrands\DimCarBrands"
+          TopLeft="324,81.6" />
         <EdgeLayout
           Id="Package\DimCarBrands.Paths[Flat File Source Output]"
           TopLeft="396.8,123.2">
@@ -2298,7 +2306,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2321,15 +2331,15 @@
     design-time-name="Package\DimColor">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="121.6,41.6"
-          Id="Package\DimColor\DimColor"
-          TopLeft="324,81.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\DimColor\DimColorDW"
           TopLeft="315.2,255.2" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\DimColor\DimColor"
+          TopLeft="324,81.6" />
         <EdgeLayout
           Id="Package\DimColor.Paths[Flat File Source Output]"
           TopLeft="384.6,123.2">
@@ -2349,7 +2359,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2372,15 +2384,15 @@
     design-time-name="Package\DimDistrict">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\DimDistrict\Flat File Source"
-          TopLeft="324,81.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DimDistrict\OLE DB Destination"
           TopLeft="315.2,255.2" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\DimDistrict\Flat File Source"
+          TopLeft="324,81.6" />
         <EdgeLayout
           Id="Package\DimDistrict.Paths[Flat File Source Output]"
           TopLeft="399.8,123.2">
@@ -2400,7 +2412,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2423,15 +2437,15 @@
     design-time-name="Package\State Names">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\State Names\Flat File Source"
-          TopLeft="324,81.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\State Names\OLE DB Destination"
           TopLeft="315.2,255.2" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\State Names\Flat File Source"
+          TopLeft="324,81.6" />
         <EdgeLayout
           Id="Package\State Names.Paths[Flat File Source Output]"
           TopLeft="399.8,123.2">
@@ -2451,7 +2465,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2476,13 +2492,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\ViolationCode\Flat File Source"
-          TopLeft="324,81.6" />
-        <NodeLayout
           Size="170.4,41.6"
           Id="Package\ViolationCode\OLE DB Destination"
           TopLeft="315.2,255.2" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\ViolationCode\Flat File Source"
+          TopLeft="324,81.6" />
         <EdgeLayout
           Id="Package\ViolationCode.Paths[Flat File Source Output]"
           TopLeft="399.8,123.2">

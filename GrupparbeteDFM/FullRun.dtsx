@@ -11,12 +11,44 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FullRun"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{B273CF15-B665-4340-BCD7-BAD01E2A1C80}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{F499792D-AC7B-4463-8D4E-12BE6A6950DE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clean Up"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{E7B07726-C89A-41ED-99EE-99A7D6ADCC5B}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean Up"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create and pop dim tabels DW"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{3FD3C582-ED1C-45DA-924D-0F57AC4059D3}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create and pop dim tabels DW"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Create DBs"
       DTS:CreationName="Microsoft.ExecutePackageTask"
@@ -65,6 +97,22 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Create RawData and SSISLog.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\From Staging into DW"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{8E9D2C74-6205-4799-A085-0572D8F138FF}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="From Staging into DW"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -136,6 +184,30 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Source 2 staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{5D17768D-07FC-4A8A-9CB2-5BFD076135B7}"
+      DTS:From="Package\Source 2 staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Create and pop dim tabels DW" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{9B7C25D6-6730-43C6-A0FF-6E2E36E99B43}"
+      DTS:From="Package\Create and pop dim tabels DW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\From Staging into DW" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{D375935F-FB5D-4F1B-9339-A0226577D16F}"
+      DTS:From="Package\From Staging into DW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Clean Up" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -152,33 +224,33 @@
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Create DBs"
-          TopLeft="146.285716776945,52.6117654437425" />
+          TopLeft="51.4285723043946,12.0941174239853" />
         <NodeLayout
           Size="182.4,48"
           Id="Package\Create LookupTabels"
-          TopLeft="147.428573939265,194.541179198955" />
+          TopLeft="268.685718684294,85.5058831594403" />
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\CreateTabels"
-          TopLeft="146.857145358105,122.964707606886" />
+          TopLeft="263.428575914733,14.5411762818333" />
         <NodeLayout
           Size="182.4,44"
           Id="Package\Get New CSV"
-          TopLeft="144.571431033465,267.95294493441" />
+          TopLeft="269.714290307493,167.482354897365" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="237.771431067525,94.2117654437425">
+          TopLeft="233.828572304395,34.1176468529093">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.7529421631437"
+              EndConnector="29.6000036103385,0"
               Start="0,0"
-              End="0,21.2529421631437">
+              End="22.1000036103385,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2529421631437" />
+                    End="22.1000036103385,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -189,18 +261,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="238.342859648685,164.564707606886">
+          TopLeft="357.257147299513,56.1411762818333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.976471592069"
+              EndConnector="0,29.364706877607"
               Start="0,0"
-              End="0,22.476471592069">
+              End="0,21.864706877607">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.476471592069" />
+                    End="0,21.864706877607" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -211,18 +283,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="237.200002486365,242.541179198955">
+          TopLeft="360.400004495893,133.50588315944">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.4117657354546"
+              EndConnector="0,33.9764717379241"
               Start="0,0"
-              End="0,17.9117657354546">
+              End="0,26.4764717379241">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.9117657354546" />
+                    End="0,26.4764717379241" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -234,21 +306,99 @@
         <NodeLayout
           Size="181.6,46.4"
           Id="Package\Source 2 staging"
-          TopLeft="144.000002452305,342.352939246023" />
+          TopLeft="25.7142861521975,161.129406899977" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="235.285716742885,311.95294493441">
+          TopLeft="269.714290307493,186.905880898671">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.3999943116129"
+              EndConnector="-62.4000041552948,0"
               Start="0,0"
-              End="0,22.8999943116129">
+              End="-54.9000041552948,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8999943116129" />
+                    End="-54.9000041552948,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Create and pop dim tabels DW"
+          TopLeft="12.5714287855189,247.623532491902" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\From Staging into DW"
+          TopLeft="29.1428576391572,333.270592516599" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="120.142857468858,207.529406899977">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0941255919256"
+              Start="0,0"
+              End="0,32.5941255919256">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5941255919256" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="122.057143212338,289.223532491902">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.0470600246972"
+              Start="0,0"
+              End="0,36.5470600246972">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5470600246972" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Clean Up"
+          TopLeft="313.485719229251,330.352945809546" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="211.542857639157,352.611769163073">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.942861590094,0"
+              Start="0,0"
+              End="94.4428615900936,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="94.4428615900936,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

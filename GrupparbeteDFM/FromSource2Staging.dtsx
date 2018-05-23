@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FromSource2Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{80D37219-0483-4B00-B0C4-91C817659C3E}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{96C60DD9-3425-4727-9060-9F269C6B305C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -330,13 +330,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\Data Flow Task\Look Up color.Outputs[Lookup Match Output].Columns[ColorID]}) ? 0 : #{Package\Data Flow Task\Look Up color.Outputs[Lookup Match Output].Columns[ColorID]}</property>
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Look Up color.Outputs[Lookup Match Output].Columns[ColorID]}) ? 5 : #{Package\Data Flow Task\Look Up color.Outputs[Lookup Match Output].Columns[ColorID]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(ColorID) ? 0 : ColorID</property>
+                          name="FriendlyExpression">ISNULL(ColorID) ? 5 : ColorID</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -353,13 +353,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\Data Flow Task\Look up Make.Outputs[Lookup Match Output].Columns[MakeID]}) ? 0 : #{Package\Data Flow Task\Look up Make.Outputs[Lookup Match Output].Columns[MakeID]}</property>
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Look up Make.Outputs[Lookup Match Output].Columns[MakeID]}) ? 8 : #{Package\Data Flow Task\Look up Make.Outputs[Lookup Match Output].Columns[MakeID]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(MakeID) ? 0 : MakeID</property>
+                          name="FriendlyExpression">ISNULL(MakeID) ? 8 : MakeID</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -418,13 +418,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\Data Flow Task\Look Up Type.Outputs[Lookup Match Output].Columns[BodyTypeID]}) ? 0 : #{Package\Data Flow Task\Look Up Type.Outputs[Lookup Match Output].Columns[BodyTypeID]}</property>
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Look Up Type.Outputs[Lookup Match Output].Columns[BodyTypeID]}) ? 9 : #{Package\Data Flow Task\Look Up Type.Outputs[Lookup Match Output].Columns[BodyTypeID]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(BodyTypeID) ? 0 : BodyTypeID</property>
+                          name="FriendlyExpression">ISNULL(BodyTypeID) ? 9 : BodyTypeID</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -887,7 +887,11 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Summons_Number, Plate_ID, Registration_State, Plate_Type, Issue_Date, Violation_Code, LOWER(Vehicle_Body_Type) AS Vehicle_Body_Type, LOWER(Vehicle_Make) AS Vehicle_Make, Issuing_Agency, Street_Code1, Street_Code2, 
+                  Street_Code3, Vehicle_Expiration_Date, Violation_Location, Violation_Precinct, Issuer_Precinct, Issuer_Code, Issuer_Command, Issuer_Squad, Violation_Time, Time_First_Observed, Violation_County, Violation_In_Front_Of_Or_Opposite, 
+                  House_Number, Street_Name, Intersecting_Street, Date_First_Observed, Law_Section, Sub_Division, Violation_Legal_Code, Days_Parking_In_Effect, From_Hours_In_Effect, To_Hours_In_Effect, LOWER(Vehicle_Color) AS Vehicle_Color, 
+                  Unregistered_Vehicle_, Vehicle_Year, Meter_Number, Feet_From_Curb, Violation_Post_Code, Violation_Description, No_Standing_or_Stopping_Violation, Hydrant_Violation, Double_Parking_Violation
+FROM     RawData</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -904,7 +908,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -6036,7 +6040,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-118.077103495694,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-126.945755839444,-22,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6060,7 +6064,7 @@ where [refTable].[Name] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-22.9699564346004,5,96.3827734375,11.609375"
+              BoundingBox="-22.9699564346005,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

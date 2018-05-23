@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="CleanUp"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{D436EB7B-CBBD-4408-83DF-478351A691C6}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{F4795917-9986-443C-A3C2-EC0D6D2DFBF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -68,7 +68,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{0E6B4B06-C039-4BF9-9531-7EC10F880BFC}"
-          SQLTask:SqlStatementSource="&#xA;DROP DATABASE DFMSource&#xA;GO&#xA;DROP DATABASE DFMStaging&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="ALTER DATABASE DFMSource SET SINGLE_USER WITH ROLLBACK IMMEDIATE;&#xA;GO&#xA;ALTER DATABASE DFMStaging SET SINGLE_USER WITH ROLLBACK IMMEDIATE;&#xA;GO&#xA;DROP DATABASE DFMSource&#xA;GO&#xA;DROP DATABASE DFMStaging&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

@@ -13,8 +13,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{D7C35668-2313-446B-92A1-D63145B6CC26}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{DD0D0B64-4E45-4740-AC07-CC00CEEA2C48}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2878,7 +2878,9 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,27.45,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

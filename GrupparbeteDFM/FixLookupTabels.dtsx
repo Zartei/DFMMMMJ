@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FixLookupTabels"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{8D2C36F4-9A8B-4330-8143-8507D722535E}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{D875D8FC-BB14-4C25-B5DE-6F70588DB7C1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -61,20 +61,20 @@
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="2"
               DTS:TextQualified="True"
-              DTS:ObjectName="ColorCode"
-              DTS:DTSID="{E6C8951B-F15E-4CD7-BEE7-FE8BD3701459}"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{EDE0B843-AEC8-4F65-A4FA-91E9D51616A1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="2"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="ID"
-              DTS:DTSID="{DC05DFEE-A03A-4372-80CD-49925B633930}"
+              DTS:ObjectName="Value"
+              DTS:DTSID="{94449688-3385-4DC9-AEB6-11AA0CE120F9}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -329,27 +329,6 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ColorCode]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ColorCode]"
-                          length="50"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ColorCode]"
-                          name="ColorCode"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ID]"
                           dataType="i2"
                           errorOrTruncationOperation="Conversion"
@@ -369,18 +348,39 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Value]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Value]"
+                          name="Value"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ColorCode]"
-                          dataType="wstr"
-                          length="50"
-                          name="ColorCode" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID]"
                           dataType="i2"
                           name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                          dataType="wstr"
+                          length="50"
+                          name="Value" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -491,12 +491,12 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ID]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ColorCode]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Value]"
                           cachedDataType="wstr"
                           cachedLength="50"
-                          cachedName="ColorCode"
+                          cachedName="Value"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ColorCode]" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Value]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -624,7 +624,7 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
         <NodeLayout
           Size="140,41.6"
           Id="Package\Drop Staging"
-          TopLeft="246.057147129215,64.3764698417948" />
+          TopLeft="267.771433213293,60.09411684056" />
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\Foreach Loop Container\Create Table"
@@ -632,14 +632,14 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task"
-          TopLeft="185.714289558177,21.3176486031819" />
+          TopLeft="183.428575233537,18.8705897453334" />
         <NodeLayout
           Size="181.6,41.6"
           Id="Package\Foreach Loop Container\Select into new tabels"
-          TopLeft="171.771432123379,96.4705916414619" />
+          TopLeft="169.485717798739,94.0235327836134" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="261.742860840778,62.9176486031819">
+          TopLeft="259.457146516138,60.4705897453334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -662,8 +662,8 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="386.4,173.6"
-          Size="386.4,216.8"
+          PanelSize="386.4,172.8"
+          Size="386.4,216"
           Id="Package\Foreach Loop Container"
           TopLeft="37.1428577753964,158.44706104569" />
         <EdgeLayout
@@ -672,14 +672,14 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.6235311791975"
+              EndConnector="0,55.6235311791976"
               Start="0,0"
-              End="0,48.1235311791975">
+              End="0,48.1235311791976">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.1235311791975" />
+                    End="0,48.1235311791976" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -694,26 +694,26 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.647622687152,-52.4705912038952"
+              EndConnector="44.3619087712298,-56.7529442051301"
               Start="0,0"
-              End="22.647622687152,-44.9705912038952">
+              End="44.3619087712298,-49.2529442051301">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-17.118060624743" />
+                    End="0,-18.8415973378173" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-17.118060624743"
-                    Point2="0,-21.118060624743"
-                    Point3="4,-21.118060624743" />
+                    Point1="0,-18.8415973378173"
+                    Point2="0,-22.8415973378173"
+                    Point3="4,-22.8415973378173" />
                   <mssgle:LineSegment
-                    End="18.647622687152,-21.118060624743" />
+                    End="40.3619087712298,-22.8415973378173" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.647622687152,-21.118060624743"
-                    Point2="22.647622687152,-21.118060624743"
-                    Point3="22.647622687152,-25.118060624743" />
+                    Point1="40.3619087712298,-22.8415973378173"
+                    Point2="44.3619087712298,-22.8415973378173"
+                    Point3="44.3619087712298,-26.8415973378173" />
                   <mssgle:LineSegment
-                    End="22.647622687152,-44.9705912038952" />
+                    End="44.3619087712298,-49.2529442051301" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -729,7 +729,7 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
     design-time-name="Package\Foreach Loop Container\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
@@ -757,9 +757,7 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

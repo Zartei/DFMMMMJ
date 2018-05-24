@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Create And Populate Dim DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{9EC8EBE7-02CD-4013-BFC0-95B3CD576268}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{4FA24F8B-6379-4243-A064-2F51E21418E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -358,7 +358,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8A12A2B6-DE6B-4AED-8426-1E86B480939A}"
-          SQLTask:SqlStatementSource="USE DFMDW&#xA;GO&#xA;&#xA;IF OBJECT_ID (N'dbo.DimBodyType', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimBodyType];&#xA;GO&#xA;CREATE TABLE [dbo].[DimBodyType](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimColor', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimColor];&#xA;CREATE TABLE [dbo].[DimColor](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimCarBrands', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimCarBrands];&#xA;CREATE TABLE [dbo].[DimCarBrands](&#xA;    ID int,&#xA;    Brand [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimDistrict', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimDistrict];&#xA;CREATE TABLE [dbo].[DimDistrict](&#xA;    Pricinct int,&#xA;    Borough [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimViolationCode', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimViolationCode];&#xA;CREATE TABLE [dbo].[DimViolationCode](&#xA;    Code int,&#xA;    [Definition] [nvarchar](200),&#xA;    ManhattanLower int,&#xA;    Other int&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimStates', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimStates];&#xA;CREATE TABLE [dbo].[DimStates](&#xA;    [State Name] [nvarchar](50),&#xA;    StateCode nvarchar(2)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimAgency', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimAgency];&#xA;CREATE TABLE [dbo].[DimAgency](&#xA;    [Agency Name] [nvarchar](50),&#xA;    [Agency Code] nvarchar(1)&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE DFMDW&#xA;GO&#xA;&#xA;IF OBJECT_ID (N'dbo.DimBodyType', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimBodyType];&#xA;GO&#xA;CREATE TABLE [dbo].[DimBodyType](&#xA;    ID int,&#xA;    BodyType [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimColor', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimColor];&#xA;CREATE TABLE [dbo].[DimColor](&#xA;    ID int,&#xA;    Color [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimCarBrands', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimCarBrands];&#xA;CREATE TABLE [dbo].[DimCarBrands](&#xA;    ID int,&#xA;    Brand [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimDistrict', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimDistrict];&#xA;CREATE TABLE [dbo].[DimDistrict](&#xA;    Pricinct int,&#xA;    Borough [nvarchar](50)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimViolationCode', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimViolationCode];&#xA;CREATE TABLE [dbo].[DimViolationCode](&#xA;    Code int,&#xA;    [Definition] [nvarchar](200),&#xA;    ManhattanLower int,&#xA;    Other int&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimStates', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimStates];&#xA;CREATE TABLE [dbo].[DimStates](&#xA;    [State Name] [nvarchar](50),&#xA;    StateCode nvarchar(2)&#xA;)&#xA;&#xA;IF OBJECT_ID (N'dbo.DimAgency', N'U') IS NOT NULL &#xA;    DROP TABLE [dbo].[DimAgency];&#xA;CREATE TABLE [dbo].[DimAgency](&#xA;    [Agency Name] [nvarchar](50),&#xA;    [Agency Code] nvarchar(1)&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1199,8 +1199,8 @@
               <connections>
                 <connection
                   refId="Package\DimColor\DimColor.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DimBodyType]"
-                  connectionManagerRefId="Package.ConnectionManagers[DimBodyType]"
+                  connectionManagerID="Package.ConnectionManagers[DimColor.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[DimColor.csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -1229,14 +1229,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DimColor\DimColor.Outputs[Flat File Source Output].Columns[BodyType]"
+                      refId="Package\DimColor\DimColor.Outputs[Flat File Source Output].Columns[Color]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DimColor\DimColor.Outputs[Flat File Source Output].ExternalColumns[BodyType]"
+                      externalMetadataColumnId="Package\DimColor\DimColor.Outputs[Flat File Source Output].ExternalColumns[Color]"
                       length="50"
-                      lineageId="Package\DimColor\DimColor.Outputs[Flat File Source Output].Columns[BodyType]"
-                      name="BodyType"
+                      lineageId="Package\DimColor\DimColor.Outputs[Flat File Source Output].Columns[Color]"
+                      name="Color"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1257,10 +1257,10 @@
                       dataType="i2"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\DimColor\DimColor.Outputs[Flat File Source Output].ExternalColumns[BodyType]"
+                      refId="Package\DimColor\DimColor.Outputs[Flat File Source Output].ExternalColumns[Color]"
                       dataType="wstr"
                       length="50"
-                      name="BodyType" />
+                      name="Color" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1371,12 +1371,12 @@
                       externalMetadataColumnId="Package\DimColor\DimColorDW.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
                       lineageId="Package\DimColor\DimColor.Outputs[Flat File Source Output].Columns[ID]" />
                     <inputColumn
-                      refId="Package\DimColor\DimColorDW.Inputs[OLE DB Destination Input].Columns[BodyType]"
+                      refId="Package\DimColor\DimColorDW.Inputs[OLE DB Destination Input].Columns[Color]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="BodyType"
-                      externalMetadataColumnId="Package\DimColor\DimColorDW.Inputs[OLE DB Destination Input].ExternalColumns[BodyType]"
-                      lineageId="Package\DimColor\DimColor.Outputs[Flat File Source Output].Columns[BodyType]" />
+                      cachedName="Color"
+                      externalMetadataColumnId="Package\DimColor\DimColorDW.Inputs[OLE DB Destination Input].ExternalColumns[Color]"
+                      lineageId="Package\DimColor\DimColor.Outputs[Flat File Source Output].Columns[Color]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1385,10 +1385,10 @@
                       dataType="i4"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\DimColor\DimColorDW.Inputs[OLE DB Destination Input].ExternalColumns[BodyType]"
+                      refId="Package\DimColor\DimColorDW.Inputs[OLE DB Destination Input].ExternalColumns[Color]"
                       dataType="wstr"
                       length="50"
-                      name="BodyType" />
+                      name="Color" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2562,7 +2562,7 @@
     design-time-name="Package\DimAgency">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DimAgency\OLE DB Destination"
@@ -2602,7 +2602,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2678,15 +2680,15 @@
     design-time-name="Package\DimCarBrands">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\DimCarBrands\CarBrands"
-          TopLeft="301.6,209.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="145.6,41.6"
           Id="Package\DimCarBrands\DimCarBrands"
           TopLeft="324,81.6" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\DimCarBrands\CarBrands"
+          TopLeft="301.6,209.6" />
         <EdgeLayout
           Id="Package\DimCarBrands.Paths[Flat File Source Output]"
           TopLeft="396.8,123.2">
@@ -2718,7 +2720,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

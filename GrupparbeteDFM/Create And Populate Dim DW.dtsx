@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{7E52E78A-9C74-4EB5-ACE0-E764EBF5EEAA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
   DTS:LocaleID="2057"
   DTS:ObjectName="Create And Populate Dim DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{4FA24F8B-6379-4243-A064-2F51E21418E7}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{40619628-DC4C-4CC3-8E3A-42B227FFD752}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -150,7 +150,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{3C166E57-F720-4DD3-A563-796F59AB308E}"
+              DTS:DTSID="{8AB34636-633B-4088-A2F3-681439619288}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +159,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Color"
-              DTS:DTSID="{0B481726-05FF-43A9-88F5-21A1242DD323}"
+              DTS:DTSID="{FFF5E7A1-0054-4D23-AA94-A3D8124C75A8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -224,7 +224,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="CODE"
-              DTS:DTSID="{7AD0B9E9-3681-41B9-96B1-0E0B1BC8B92C}"
+              DTS:DTSID="{B8F92C65-F6BA-445A-AD18-0E28EBED5AC7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -233,7 +233,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="DEFINITION"
-              DTS:DTSID="{427A8B67-1527-4ADE-AF15-76C74ABB436F}"
+              DTS:DTSID="{20DFC6CB-E647-46E4-8421-40F7EB5607D5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -241,7 +241,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="Manhattan 96th St  &amp; below"
-              DTS:DTSID="{D91F9D56-649F-4893-BE0E-8D7BF39CF3E2}"
+              DTS:DTSID="{8C0EA5D3-9061-4D42-9CA0-4D2C1BB3CFF0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -249,7 +249,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="All Other Areas"
-              DTS:DTSID="{BB829533-5B15-4754-986B-C584B20152D8}"
+              DTS:DTSID="{692AAA2B-D0B4-48D8-BBAA-4BA4592BCADB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -264,7 +264,7 @@
         DTS:Name="ConnectionString">@[User::ConStringDFMDW]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-575EBG3\sql2017;Initial Catalog=DFMDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -317,7 +317,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConStringDFMDW">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=DESKTOP-575EBG3\sql2017;Initial Catalog=DFMDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -328,7 +328,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConStringMaster">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=DESKTOP-575EBG3\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -339,7 +339,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ServerName">
       <DTS:VariableValue
-        DTS:DataType="8">ZARTEZEN\sql2017johan</DTS:VariableValue>
+        DTS:DataType="8">DESKTOP-575EBG3\sql2017</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -2018,7 +2018,7 @@
                       externalMetadataColumnId="Package\ViolationCode\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CODE]"
                       lineageId="Package\ViolationCode\Flat File Source.Outputs[Flat File Source Output].Columns[CODE]"
                       name="CODE"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -2370,35 +2370,35 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143.111111111112,41.7777777777778"
           Id="Package\Create Tabels"
           TopLeft="16.5714288536383,22.6352944350985" />
         <NodeLayout
-          Size="131.2,41.6"
+          Size="131.111111111112,41.7777777777778"
           Id="Package\DimAgency"
           TopLeft="29.1428576391571,269.176474363334" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143.111111111112,41.7777777777778"
           Id="Package\DimBodyType"
           TopLeft="236.571432600216,28.7529415797198" />
         <NodeLayout
-          Size="145.6,41.6"
+          Size="145.777777777778,41.7777777777778"
           Id="Package\DimCarBrands"
           TopLeft="230.857146788617,116.235295747803" />
         <NodeLayout
-          Size="121.6,41.6"
+          Size="121.777777777778,41.7777777777778"
           Id="Package\DimColor"
           TopLeft="33.1428577072766,110.776470716932" />
         <NodeLayout
-          Size="129.6,41.6"
+          Size="129.777777777778,41.7777777777778"
           Id="Package\DimDistrict"
           TopLeft="25.1428575710374,184.847058566136" />
         <NodeLayout
-          Size="138.4,41.6"
+          Size="138.222222222223,41.7777777777778"
           Id="Package\State Names"
           TopLeft="239.428575506016,187.952939537735" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142.222222222223,41.7777777777778"
           Id="Package\ViolationCode"
           TopLeft="230.857146788617,270.588233389409" />
         <EdgeLayout
@@ -2747,11 +2747,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.4,41.6"
+          Size="138.222222222223,41.7777777777778"
           Id="Package\DimColor\DimColorDW"
           TopLeft="315.2,255.2" />
         <NodeLayout
-          Size="121.6,41.6"
+          Size="121.777777777778,41.7777777777778"
           Id="Package\DimColor\DimColor"
           TopLeft="324,81.6" />
         <EdgeLayout
@@ -2902,37 +2902,47 @@
     design-time-name="Package\ViolationCode">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170.222222222223,41.7777777777778"
           Id="Package\ViolationCode\OLE DB Destination"
           TopLeft="315.2,255.2" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150.666666666667,41.7777777777778"
           Id="Package\ViolationCode\Flat File Source"
-          TopLeft="324,81.6" />
+          TopLeft="367.111111111111,72.4444444444444" />
         <EdgeLayout
           Id="Package\ViolationCode.Paths[Flat File Source Output]"
-          TopLeft="399.8,123.2">
+          TopLeft="442.444444444444,114.222222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,132"
+              EndConnector="-42.1333333333333,140.977777777778"
               Start="0,0"
-              End="0,124.5">
+              End="-42.1333333333333,133.477777777778">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,124.5" />
+                    End="0,66.4888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66.4888888888889"
+                    Point2="0,70.4888888888889"
+                    Point3="-4,70.4888888888889" />
+                  <mssgle:LineSegment
+                    End="-38.1333333333333,70.4888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38.1333333333333,70.4888888888889"
+                    Point2="-42.1333333333333,70.4888888888889"
+                    Point3="-42.1333333333333,74.4888888888889" />
+                  <mssgle:LineSegment
+                    End="-42.1333333333333,133.477777777778" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -13,8 +13,8 @@
   DTS:MaxErrorCount="30"
   DTS:ObjectName="CSVtoSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="92"
-  DTS:VersionGUID="{DD0D0B64-4E45-4740-AC07-CC00CEEA2C48}">
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{AD0E7DEC-412B-4B6E-A8FB-28118535B184}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -744,6 +744,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
         <DTS:Executable
           DTS:refId="Package\For each in new files\Get one file"
           DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{01855194-427E-4638-9F48-AF1F5A4B5307}"
           DTS:ExecutableType="Microsoft.Pipeline"
@@ -2660,27 +2661,6 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\For each in new files\Move File to old"
-          DTS:CreationName="Microsoft.FileSystemTask"
-          DTS:Description="File System Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{B6B61A58-C7C5-4B0D-8882-D6557591D6AC}"
-          DTS:ExecutableType="Microsoft.FileSystemTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Move File to old"
-          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <FileSystemData
-              TaskOperationType="MoveFile"
-              TaskSourcePath="User::PathNew"
-              TaskIsSourceVariable="True"
-              TaskDestinationPath="User::PathOld"
-              TaskIsDestinationVariable="True" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\For each in new files\WriteLog"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -2727,6 +2707,27 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move File to old"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{B6B61A58-C7C5-4B0D-8882-D6557591D6AC}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move File to old"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskSourcePath="User::PathNew"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::PathOld"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2743,7 +2744,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Data Profiling Task"
-          TopLeft="262.793655268999,31.6758174377053" />
+          TopLeft="420.507943669143,40.240523440175" />
         <NodeLayout
           Size="132.8,41.6"
           Id="Package\For each in new files\Get one file"
@@ -2752,10 +2753,6 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
           Size="137.6,41.6"
           Id="Package\For each in new files\Is File In log"
           TopLeft="42.8571453581051,25.2235305957728" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\For each in new files\Move File to old"
-          TopLeft="233.142861930692,22.9856230437687" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\For each in new files\WriteLog"
@@ -2809,10 +2806,14 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="435.2,255.2"
-          Size="435.2,298.4"
+          PanelSize="289.6,258.4"
+          Size="289.6,301.6"
           Id="Package\For each in new files"
-          TopLeft="104.126982683497,109.301962317233" />
+          TopLeft="49.2698388921426,62.8078440181117" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Move File to old"
+          TopLeft="395.428577209006,118.891504598791" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2878,9 +2879,7 @@ WHERE [FileName] = 'Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,27.45,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

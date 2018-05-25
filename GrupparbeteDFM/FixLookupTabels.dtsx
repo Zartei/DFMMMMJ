@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FixLookupTabels"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{D875D8FC-BB14-4C25-B5DE-6F70588DB7C1}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{CAF556F6-C7BD-4936-B150-D1D77609671F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ConnectionString">@[User::ConString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -38,7 +38,7 @@
         DTS:Name="ConnectionString">@[User::ConStringMaster]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -91,7 +91,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConString">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=DFMSource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -102,7 +102,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ConStringMaster">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=ZARTEZEN\sql2017johan;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=ZARTEZEN\sql2017;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -133,7 +133,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ServerName">
       <DTS:VariableValue
-        DTS:DataType="8">ZARTEZEN\sql2017johan</DTS:VariableValue>
+        DTS:DataType="8">ZARTEZEN\sql2017</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -263,25 +263,6 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
       </DTS:ForEachEnumerator>
       <DTS:Variables />
       <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\Create Table"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{8A611142-1A41-4D45-AF0F-C67DE5F4DC84}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Create Table"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{FA1DBE3E-E757-4481-96B7-6A6DC5A548DB}"
-              SQLTask:SqlStmtSourceType="Variable"
-              SQLTask:SqlStatementSource="User::SQLCreateTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
@@ -557,7 +538,7 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
           DTS:LocaleID="-1"
           DTS:ObjectName="Select into new tabels"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -616,7 +597,7 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="144,41.6"
           Id="Package\CreateStaging"
@@ -626,31 +607,27 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
           Id="Package\Drop Staging"
           TopLeft="267.771433213293,60.09411684056" />
         <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Foreach Loop Container\Create Table"
-          TopLeft="22.2857153464339,17.0352956019472" />
-        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task"
-          TopLeft="183.428575233537,18.8705897453334" />
+          TopLeft="21.7142867652734,26.2117663188788" />
         <NodeLayout
           Size="181.6,41.6"
           Id="Package\Foreach Loop Container\Select into new tabels"
-          TopLeft="169.485717798739,94.0235327836134" />
+          TopLeft="239.771433281412,27.341178907242" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="259.457146516138,60.4705897453334">
+          TopLeft="172.114286765273,47.5764726130604">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.55294303828"
+              EndConnector="67.6571465161385,0"
               Start="0,0"
-              End="0,26.05294303828">
+              End="60.1571465161385,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.05294303828" />
+                    End="60.1571465161385,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -662,24 +639,36 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="386.4,172.8"
-          Size="386.4,216"
+          PanelSize="464,127.2"
+          Size="464,170.4"
           Id="Package\Foreach Loop Container"
           TopLeft="37.1428577753964,158.44706104569" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="166.2095249189,102.823529866492">
+          TopLeft="165.142858729071,102.823529866492">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.6235311791976"
+              EndConnector="27.9999990463257,55.6235311791975"
               Start="0,0"
-              End="0,48.1235311791976">
+              End="27.9999990463257,48.1235311791975">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.1235311791976" />
+                    End="0,29.2594310143655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.2594310143655"
+                    Point2="0,33.2594310143655"
+                    Point3="4,33.2594310143655" />
+                  <mssgle:LineSegment
+                    End="23.9999990463257,33.2594310143655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.9999990463257,33.2594310143655"
+                    Point2="27.9999990463257,33.2594310143655"
+                    Point3="27.9999990463257,37.2594310143655" />
+                  <mssgle:LineSegment
+                    End="27.9999990463257,48.1235311791975" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -690,30 +679,18 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="293.409524442063,158.44706104569">
+          TopLeft="341.457145494345,158.44706104569">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.3619087712298,-56.7529442051301"
+              EndConnector="0,-56.75294420513"
               Start="0,0"
-              End="44.3619087712298,-49.2529442051301">
+              End="0,-49.25294420513">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18.8415973378173" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-18.8415973378173"
-                    Point2="0,-22.8415973378173"
-                    Point3="4,-22.8415973378173" />
-                  <mssgle:LineSegment
-                    End="40.3619087712298,-22.8415973378173" />
-                  <mssgle:CubicBezierSegment
-                    Point1="40.3619087712298,-22.8415973378173"
-                    Point2="44.3619087712298,-22.8415973378173"
-                    Point3="44.3619087712298,-26.8415973378173" />
-                  <mssgle:LineSegment
-                    End="44.3619087712298,-49.2529442051301" />
+                    End="0,-49.25294420513" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -729,7 +706,7 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
     design-time-name="Package\Foreach Loop Container\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
@@ -757,7 +734,9 @@ TRUNCATE TABLE LookupStaging</DTS:VariableValue>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

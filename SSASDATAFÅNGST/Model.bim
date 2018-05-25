@@ -446,7 +446,7 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "isHidden": true,
-            "expression": " if(DIMDATE[Month]<3,\"Winter\", if(DIMDATE[Month]=12,\"Winter\", if(DIMDATE[Month]<6,\"Spring\", if(DIMDATE[Month]<9,\"Summar\",\"Fall\"))))"
+            "expression": " if(DIMDATE[Month]<3,\"Winter\", if(DIMDATE[Month]=12,\"Winter\", if(DIMDATE[Month]<6,\"Spring\", if(DIMDATE[Month]<9,\"Summer\",\"Fall\"))))"
           },
           {
             "type": "calculated",

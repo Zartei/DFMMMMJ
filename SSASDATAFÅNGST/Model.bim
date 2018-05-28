@@ -446,7 +446,8 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "isHidden": true,
-            "expression": " if(DIMDATE[Month]<3,\"Winter\", if(DIMDATE[Month]=12,\"Winter\", if(DIMDATE[Month]<6,\"Spring\", if(DIMDATE[Month]<9,\"Summer\",\"Fall\"))))"
+            "expression": " if(DIMDATE[Month]<3,\"Winter\", if(DIMDATE[Month]=12,\"Winter\", if(DIMDATE[Month]<6,\"Spring\", if(DIMDATE[Month]<9,\"Summer\",\"Fall\"))))",
+			"sortByColumn": "SortSeason"
           },
           {
             "type": "calculated",
@@ -476,6 +477,13 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "expression": " FORMAT(DIMDATE[Date],\"MMMM\")"
+          },
+          {
+            "type": "calculated",
+            "name": "SortSeason",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": " if(DIMDATE[Month]<3,1, if(DIMDATE[Month]=12,1, if(DIMDATE[Month]<6,2, if(DIMDATE[Month]<9,3,4))))"
           }
         ],
         "partitions": [
